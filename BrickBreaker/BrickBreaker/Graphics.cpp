@@ -108,7 +108,7 @@ namespace SDLFramework {
 		}
 
 		//Temp Background White
-		SDL_SetRenderDrawColor(mRenderer, 0xff, 0xff, 0xff, 0xff);
+		//SDL_SetRenderDrawColor(mRenderer, 0xff, 0xff, 0xff, 0xff);
 
 		if (TTF_Init() == -1) {
 			std::cerr << "Unable to initialized SDL_ttf! TTF Error: " << TTF_GetError() << std::endl;

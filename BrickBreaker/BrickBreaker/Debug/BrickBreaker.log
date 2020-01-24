@@ -1,3 +1,6 @@
-﻿  ScreenManager.cpp
-GameManager.obj : error LNK2019: unresolved external symbol "public: static void __cdecl SDLFramework::BackgroundStars::Release(void)" (?Release@BackgroundStars@SDLFramework@@SAXXZ) referenced in function "public: __thiscall SDLFramework::GameManager::~GameManager(void)" (??1GameManager@SDLFramework@@QAE@XZ)
-C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\Debug\BrickBreaker.exe : fatal error LNK1120: 1 unresolved externals
+﻿  GameManager.cpp
+  ScreenManager.cpp
+  StartScreen.cpp
+  main.cpp
+  Generating Code...
+  BrickBreaker.vcxproj -> C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\Debug\BrickBreaker.exe
