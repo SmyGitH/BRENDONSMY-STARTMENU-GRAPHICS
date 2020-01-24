@@ -2,8 +2,7 @@
 #define _SCREENMANAGER_H
 
 #include "StartScreen.h"
-#include "BackgroundStars.h"
-#include "PlayScreen.h"
+
 
 class ScreenManager {
 private:
@@ -13,9 +12,8 @@ private:
 	Screens mCurrentScreen;
 
 	InputManager* mInput;
-	BackgroundStars* mBackgroundStars;
 	StartScreen* mStartScreen;
-	PlayScreen* mPlayScreen;
+	
 
 public:
 	static ScreenManager* Instance();

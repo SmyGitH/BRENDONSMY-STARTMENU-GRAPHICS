@@ -135,6 +135,9 @@
     <ClCompile Include="..\..\..\SDL_tutor\SDL_TUTORIAL\SDL_TUTORIAL\Timer.cpp" />
     <ClCompile Include="AnimatedTexture.cpp" />
     <ClCompile Include="AssetManager.cpp" />
+    <ClCompile Include="GameEntity.cpp" />
+    <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="Scoreboard.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\SDL_tutor\SDL_TUTORIAL\SDL_TUTORIAL\InputManager.h" />
@@ -145,6 +148,10 @@
     <ClInclude Include="..\..\..\SDL_tutor\SDL_TUTORIAL\SDL_TUTORIAL\Timer.h" />
     <ClInclude Include="AnimatedTexture.h" />
     <ClInclude Include="AssetManager.h" />
+    <ClInclude Include="GameEntity.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Graphics.h" />
+    <ClInclude Include="Scoreboard.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

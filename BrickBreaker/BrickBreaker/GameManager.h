@@ -5,7 +5,7 @@
 #include "Texture.h"
 #include "InputManager.h"
 #include "ScreenManager.h"
-#include "BackgroundStars.h"
+
 
 
 namespace SDLFramework {
@@ -20,16 +20,9 @@ namespace SDLFramework {
 		const int FRAME_RATE = 60;
 		Timer* mTimer;
 
-		//GameEntity* mParent;
-		//GameEntity* mChild;
-
-
 		AssetManager* mAssetManager;
 		InputManager* mInputManager;
-		//Texture* mTex;
-		//Texture* mFontTex;
-
-		BackgroundStars* mStars;
+		
 		ScreenManager* mScreenManager;
 
 	public:

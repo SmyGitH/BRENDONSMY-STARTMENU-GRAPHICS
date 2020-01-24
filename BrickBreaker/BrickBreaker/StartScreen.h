@@ -4,7 +4,6 @@
 #include "AnimatedTexture.h"
 #include "InputManager.h"
 #include "Scoreboard.h"
-#include "BackgroundStars.h"
 
 using namespace SDLFramework;
 
@@ -13,7 +12,6 @@ private:
 	Timer* mTimer;
 	InputManager* mInputManager;
 
-	BackgroundStars* mStars;
 
 	//Top Bar Entities
 	GameEntity* mTopBar;
