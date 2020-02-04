@@ -4,6 +4,7 @@
 #include "Brick.h"
 #include "Log.h"
 
+
 Ball::Ball(Window* window, const std::string& textureName, int xPos, int yPos, Entity* linkedPaddle) :
     Entity(window, textureName, xPos, yPos)
 {

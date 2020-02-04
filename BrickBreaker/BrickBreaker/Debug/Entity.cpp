@@ -4,6 +4,8 @@
 #include "Log.h"
 #include "Window.h"
 
+
+
 Entity::Entity(Window* window, const std::string& textureName, int xPos, int yPos):
     textureName(textureName)
 {

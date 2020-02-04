@@ -5,9 +5,9 @@
 #include <SDL_mixer.h>
 
 #include "Window.h"
-#include "Entity.h"
 #include "Ball.h"
 #include "Mods.h"
+#include "Brick.h"
 
 enum GameState
 {
@@ -25,7 +25,7 @@ class GameManager
 
         // start running the game, Tick functions are run inside this method
         void runGame();
-
+		
         void quit() { _quit = true; }
         void setState(int state);
 
@@ -39,14 +39,16 @@ class GameManager
         // adds the given entity to the GameManager entity vector
 		void addEntity(Entity* e);
 
-        // Check events and wait for the user to give some input
+       
         // if the user presses the red X, close the program
         // if the user presses enter, space, or escape, go back to the main menu
         void listenForQuit();
 
-        // really only used once. should this be a function?
+        
         // renders this project's credits to the screen
         void printCredits();
+
+		
 
     private:
         Window* window;
@@ -54,6 +56,8 @@ class GameManager
 
         Ball* ball;
         Entity* paddle;
+		Brick* brick;
+		
         Mods* mod;
 
         SDL_Texture* bgTexture;
@@ -99,6 +103,7 @@ class GameManager
 
         // current Game state, see GameState enum for options
         int currentState;
+
 
         std::vector<Entity*> entities;
 };

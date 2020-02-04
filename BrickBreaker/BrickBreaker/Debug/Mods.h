@@ -1,9 +1,11 @@
 #ifndef _MODS_H
 #define _MODS_H
 
+#include <iostream>
+
 #include "Entity.h"
 #include "Log.h"
-#include <iostream>
+
 
 class Mods : public Entity
 {

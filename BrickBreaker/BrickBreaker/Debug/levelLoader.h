@@ -10,14 +10,17 @@
 #include "GameManager.h"
 #include <iostream>
 #include <vector>
-#include "Brick.h"
+
+
+
+#define BLOCK_WIDTH 90
 
 class LevelLoader
 {
     public:
 
 		LevelLoader(GameManager* gm);
-		void openMap(const std::string& mapName, int& maxBlocks);
+		void buildMap(int getMaxHealth, int& maxBlocks);
 
     private:
 		GameManager* gameManager;
