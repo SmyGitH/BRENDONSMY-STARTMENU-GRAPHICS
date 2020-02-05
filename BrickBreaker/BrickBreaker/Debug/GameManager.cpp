@@ -15,11 +15,11 @@ GameManager::GameManager(Window* window):
     _quit = false;
     srand(time(NULL));
 
-    bgTexture = window->loadTexture("bg.bmp");
-    gameBgTexture = window->loadTexture("bgNoTitle.bmp");
-    htpTexture = window->loadTexture("HowToPlay.bmp");
+    bgTexture = window->loadTexture("bg.png");
+    //gameBgTexture = window->loadTexture("bgNoTitle.png");
+    htpTexture = window->loadTexture("HowToPlay.png");
 
-    paddle = new Entity(window, "paddle.bmp", 305, 490);
+    paddle = new Entity(window, "paddle.png", 305, 490);
 
     currentLevel = 1;
     bricksLeft = 0;
@@ -40,6 +40,7 @@ void GameManager::initGame(bool fresh)
     paddle->stopMoving(MOVE_RIGHT);
     ball = new Ball(window, "ball.png", window->getWidth() / 2, window->getHeight() / 2, paddle);
     ball->setOnPaddle(true);
+	brick = new Brick(window, "redBrick.png", 200, 200, 2);
 
     //used for random powerup spwaning
     randNum = rand() % 4;
@@ -146,6 +147,8 @@ void GameManager::runGame()
 void GameManager::gameTick()
 {
     bool repeatKey = SDL_PollEvent(&event) == 1;
+
+	brick->update();
 
     if (levelOver)
     {

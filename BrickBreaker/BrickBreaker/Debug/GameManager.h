@@ -8,6 +8,7 @@
 #include "Entity.h"
 #include "Ball.h"
 #include "Mods.h"
+#include "Brick.h"
 
 enum GameState
 {
@@ -54,6 +55,7 @@ class GameManager
 
         Ball* ball;
         Entity* paddle;
+		Brick* brick;
         Mods* mod;
 
         SDL_Texture* bgTexture;

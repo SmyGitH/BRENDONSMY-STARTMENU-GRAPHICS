@@ -9,6 +9,11 @@ Entity(window, textureName, xPos, yPos)
     health = maxHealth;
 }
 
+void Brick::update() {
+
+	window->renderTexture(texture, xPos, yPos);
+}
+
 bool Brick::dealDamage(int dmg)
 {
     health -= dmg;

@@ -2,6 +2,7 @@
 #define _BRICK_H
 
 #include "Entity.h"
+#include "Ball.h"
 
 class Brick : public Entity
 {
@@ -10,6 +11,8 @@ class Brick : public Entity
 
         int getHealth() { return health; }
         int getMaxHealth() { return maxHealth; }
+
+		virtual void update();
 
         // deal 'dmg' damage to the brick.
         // if the brick survives the damage (health > 0), return true

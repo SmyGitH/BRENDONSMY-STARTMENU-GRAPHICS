@@ -1,11 +1,20 @@
-Error: Window::loadTexture error: Couldn't open Assets\paddle.bmp
-Info:  Created new entity with texture paddle.bmp at (305, 305)
+Error: Window::loadTexture error: Couldn't open Assets\HowToPlay.png
+Info:  Created new entity with texture paddle.png at (305, 305)
 Info:  Set state to 1
-Info:  Changed texture of entity from paddle.bmp to paddle.png
+Info:  Changed texture of entity from paddle.png to paddle.png
 Info:  Created new entity with texture ball.png at (320, 320)
 Info:  Placed ball on paddle.
+Info:  Created new entity with texture redBrick.png at (200, 200)
 Info:  Created new entity with texture PowerUP.png at (320, 320)
 Info:  Loaded level 1 with 1 blocks.
 Info:  Detached ball from paddle.
-Info:  Changed texture of entity from paddle.bmp to paddle_big.png
+Info:  Changed texture of entity from paddle.png to paddle_big.png
 Info:  Spawn bigger paddle
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
