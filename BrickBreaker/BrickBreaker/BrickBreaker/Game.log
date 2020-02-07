@@ -4,17 +4,27 @@ Info:  Set state to 1
 Info:  Changed texture of entity from paddle.png to paddle.png
 Info:  Created new entity with texture ball.png at (320, 320)
 Info:  Placed ball on paddle.
-Info:  Created new entity with texture redBrick.png at (200, 200)
 Info:  Created new entity with texture PowerUP.png at (320, 320)
 Info:  Loaded level 1 with 1 blocks.
+Info:  Created new entity with texture redBrick.png at (200, 200)
 Info:  Detached ball from paddle.
-Info:  Changed texture of entity from paddle.png to paddle_big.png
-Info:  Spawn bigger paddle
 Info:  Ball hit something!
+Error: Window::loadTexture error: Couldn't open Assets\yellowBrick.bmp
+Info:  Changed texture of entity from redBrick.png to yellowBrick.bmp
+Info:  1 / 1 bricks remaining
 Info:  Ball hit something!
+Info:  Changed texture of entity from paddle.png to paddle_small.png
+Info:  Spawn smaller paddle
 Info:  Ball hit something!
+Error: Window::loadTexture error: Couldn't open Assets\greenBrick.bmp
+Info:  Changed texture of entity from redBrick.png to greenBrick.bmp
+Info:  1 / 1 bricks remaining
 Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
+Error: Tried to delete non-existant texture!
+Info:  0 / 1 bricks remaining
+Info:  Changed texture of entity from paddle.png to paddle.png
+Info:  Created new entity with texture ball.png at (320, 320)
+Info:  Placed ball on paddle.
+Info:  Created new entity with texture PowerUP.png at (320, 320)
+Info:  Loaded level 2 with 1 blocks.
+Info:  Created new entity with texture redBrick.png at (200, 200)

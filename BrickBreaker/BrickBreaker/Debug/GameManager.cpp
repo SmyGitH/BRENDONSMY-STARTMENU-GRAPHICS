@@ -20,6 +20,7 @@ GameManager::GameManager(Window* window):
     htpTexture = window->loadTexture("HowToPlay.png");
 
     paddle = new Entity(window, "paddle.png", 305, 490);
+	
 
     currentLevel = 1;
     bricksLeft = 0;
@@ -40,7 +41,7 @@ void GameManager::initGame(bool fresh)
     paddle->stopMoving(MOVE_RIGHT);
     ball = new Ball(window, "ball.png", window->getWidth() / 2, window->getHeight() / 2, paddle);
     ball->setOnPaddle(true);
-	brick = new Brick(window, "redBrick.png", 200, 200, 2);
+	
 
     //used for random powerup spwaning
     randNum = rand() % 4;
@@ -66,7 +67,7 @@ void GameManager::initGame(bool fresh)
     if (currentState == STATE_PLAYING)
     {
         Log::info("Loaded level " + std::to_string(currentLevel) + " with " + std::to_string(maxBricks) + " blocks.");
-
+		addEntity(new Brick(window, "redBrick.png", 200, 200, 3));
         bricksLeft = maxBricks;
         levelOver = false;
     }
@@ -148,7 +149,7 @@ void GameManager::gameTick()
 {
     bool repeatKey = SDL_PollEvent(&event) == 1;
 
-	brick->update();
+	
 
     if (levelOver)
     {
@@ -215,7 +216,7 @@ void GameManager::gameTick()
 	bool collidedThisTick = false;
     for (Entity* e : entities)
     {
-        bool playedSound = false;
+      
         if (e->isActive())
         {
             // don't think this is that cpu intensive but I guess it could be
@@ -230,13 +231,12 @@ void GameManager::gameTick()
                         bricksLeft--;
                         totalBricksDestroyed++;
                        
-                        playedSound = true;
+                    
                     }
                     Log::info(std::to_string(bricksLeft) + " / " + std::to_string(maxBricks) + " bricks remaining");
                 }
 
-                if (!playedSound)
-                    Mix_PlayChannel(-1, ballHitSound, 0);
+              
             }
             e->update();
         }

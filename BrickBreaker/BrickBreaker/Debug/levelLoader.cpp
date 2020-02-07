@@ -35,11 +35,11 @@ void LevelLoader::openMap(const std::string& mapName, int& maxBlocks)
 	while (health > 0)
 	{
 		if (health == 3)
-			gameManager->addEntity(new Brick(gameManager->getWindow(), "redBrick.bmp", xpos, ypos, health));
+			gameManager->addEntity(new Brick(gameManager->getWindow(), "redBrick.png", xpos, ypos, health));
 		if (health == 2)
-			gameManager->addEntity(new Brick(gameManager->getWindow(), "yellowBrick.bmp", xpos, ypos, health));
+			gameManager->addEntity(new Brick(gameManager->getWindow(), "yellowBrick.png", xpos, ypos, health));
 		if (health == 1)
-			gameManager->addEntity(new Brick(gameManager->getWindow(), "greenBrick.bmp", xpos, ypos, health));
+			gameManager->addEntity(new Brick(gameManager->getWindow(), "greenBrick.png", xpos, ypos, health));
 
 		blockCount++;
 

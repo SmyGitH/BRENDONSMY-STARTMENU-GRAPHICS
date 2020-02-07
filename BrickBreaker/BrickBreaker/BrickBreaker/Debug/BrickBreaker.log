@@ -1,4 +1,6 @@
 ﻿  GameManager.cpp
 C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\GameManager.cpp(16,15): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\GameManager.cpp(139,33): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\GameManager.cpp(140,33): warning C4018:  '<': signed/unsigned mismatch
+Window.obj : warning LNK4204: 'C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\vc142.pdb' is missing debugging information for referencing module; linking object as if no debug info
+Log.obj : warning LNK4204: 'C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\vc142.pdb' is missing debugging information for referencing module; linking object as if no debug info
   BrickBreaker.vcxproj -> C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\BrickBreaker.exe
