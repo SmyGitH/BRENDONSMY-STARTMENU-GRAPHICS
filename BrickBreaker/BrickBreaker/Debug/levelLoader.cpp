@@ -16,16 +16,7 @@ LevelLoader::LevelLoader(GameManager* gm)
 // function for openeing and reading the file containing the map
 void LevelLoader::openMap(const std::string& mapName, int& maxBlocks)
 {
-    Log::info("Loading " + mapName);
-    string line;
-	ifstream myFile(mapName);
-
-		// check to see if the file is able to be opened
-    if (!myFile.is_open())
-    {
-        Log::error("Couldn't open " + mapName);
-        maxBlocks = 0;
-    }
+   
 
     int blockCount = 10;
 	int health = 3;

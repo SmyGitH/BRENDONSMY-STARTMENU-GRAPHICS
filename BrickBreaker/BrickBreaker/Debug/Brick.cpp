@@ -19,9 +19,9 @@ bool Brick::dealDamage(int dmg)
     health -= dmg;
 
 	if (health == 2)
-		setTexture("yellowBrick.bmp");
+		setTexture("yellowBrick.png");
 	if (health == 1)
-		setTexture("greenBrick.bmp");
+		setTexture("greenBrick.png");
 
     if (health <= 0)
     {

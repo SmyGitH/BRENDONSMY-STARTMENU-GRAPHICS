@@ -10,6 +10,9 @@
 #include "Mods.h"
 #include "Brick.h"
 
+#define BLOCK_WIDTH 90
+
+
 enum GameState
 {
     STATE_MENU = 0,
@@ -87,6 +90,10 @@ class GameManager
 
         // overall number of bricks destroyed
         int totalBricksDestroyed;
+
+		//Array for brick print
+		int printBrickX[5];
+		int printBrickY[3];
 
         // true when there are no bricks left on the current level
         bool levelOver;

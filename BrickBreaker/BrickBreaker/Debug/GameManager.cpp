@@ -24,8 +24,10 @@ GameManager::GameManager(Window* window):
 
     currentLevel = 1;
     bricksLeft = 0;
-    maxBricks = 1;
+    maxBricks = 0;
     totalBricksDestroyed = 0;
+	//printBrickX[0] = {30,120,210,300,390};
+	//printBrickY[0] = {30,60,90};
 
     powerupTimer = 3;
     powerUpActive = false;
@@ -45,7 +47,7 @@ void GameManager::initGame(bool fresh)
 
     //used for random powerup spwaning
     randNum = rand() % 4;
-    mod = new Mods(window, "PowerUP.png", window->getWidth() / 2, 0 );//makes a new power down object
+    mod = new Mods(window, "PowerUP.png", window->getWidth() / 2, 0 );
 
     isPressed = false;
 
@@ -62,12 +64,17 @@ void GameManager::initGame(bool fresh)
         totalBricksDestroyed = 0;
     } 
 
-    LevelLoader* loader = new LevelLoader(this);
+    //LevelLoader* loader = new LevelLoader(this);
 
     if (currentState == STATE_PLAYING)
     {
         Log::info("Loaded level " + std::to_string(currentLevel) + " with " + std::to_string(maxBricks) + " blocks.");
-		addEntity(new Brick(window, "redBrick.png", 200, 200, 3));
+		addEntity(brick = new Brick(window, "redBrick.png", 30, 100, 3));
+		addEntity(brick = new Brick(window, "redBrick.png", 120, 100, 3));
+		addEntity(brick = new Brick(window, "redBrick.png", 210, 100, 3));
+		addEntity(brick = new Brick(window, "redBrick.png", 300, 100, 3));
+		addEntity(brick = new Brick(window, "redBrick.png", 390, 100, 3));
+		addEntity(brick = new Brick(window, "redBrick.png", 480, 100, 3));
         bricksLeft = maxBricks;
         levelOver = false;
     }
@@ -148,17 +155,7 @@ void GameManager::runGame()
 void GameManager::gameTick()
 {
     bool repeatKey = SDL_PollEvent(&event) == 1;
-
 	
-
-    if (levelOver)
-    {
-        //totalBricksDestroyed += maxBricks;
-        currentLevel++;
-        initGame(false);
-        levelOver = false;
-        return;
-    }
 
     if(ball->getLives() < 1)
     {
@@ -219,7 +216,7 @@ void GameManager::gameTick()
       
         if (e->isActive())
         {
-            // don't think this is that cpu intensive but I guess it could be
+            // brick damage
             if ((ball->collidedWith(e)) && (e->isActive()) && !collidedThisTick)
             {
                 collidedThisTick = true;
@@ -252,7 +249,7 @@ void GameManager::gameTick()
         {
             powerupTimer = 0;
             mod->fastPaddle();
-            paddle->setMoveRate(7);
+            paddle->setMoveRate(16);
             mod->remove();
             powerUpActive = true;
         }
@@ -260,15 +257,17 @@ void GameManager::gameTick()
 
     if(randNum == 1 && isPressed == true && !powerUpActive)
     {
-        mod->update();
-        if(mod->collidedWith(paddle))
-        {
-            powerupTimer = 0;
-            paddle->setTexture("paddle_big.png");
-            mod->largePaddle();
-            mod->remove();
-            powerUpActive = true;
-        }
+		{
+			mod->update();
+			if (mod->collidedWith(paddle))
+			{
+				powerupTimer = 0;
+				mod->slowerPaddle();
+				paddle->setMoveRate(4);
+				mod->remove();
+				powerUpActive = true;
+			}
+		}
     }
 
     if(randNum == 2 && isPressed == true && !powerUpActive)
@@ -303,7 +302,7 @@ void GameManager::gameTick()
     }
     if (randNum == 1 && powerupTimer < 254)
     {
-        window->renderCenteredText("PADDLE SIZE INCREASED!", 300, { c,c,c }, 30, FONT_RENDER_BLENDED, { 100,100,100 });
+        window->renderCenteredText("PADDLE SPEED DECREASED!", 300, { c,c,c }, 30, FONT_RENDER_BLENDED, { 100,100,100 });
     }
     if (randNum == 2 && powerupTimer < 254)
     {
@@ -324,10 +323,10 @@ void GameManager::gameTick()
     window->renderText("Lives: " + std::to_string(ball->getLives()), 5, 0, { 0, 0, 0 }, 25, FONT_RENDER_BLENDED, { 0, 0, 0 });
     window->renderText("Score: " + std::to_string(calcScore()), window->getWidth() - 100, 0, { 0, 0, 0 }, 25, FONT_RENDER_BLENDED, { 0, 0, 0 });
 
-    if (bricksLeft == 0)
+    if (bricksLeft <= 0)
     {
         levelOver = true;
-        totalBricksDestroyed += maxBricks;
+       // totalBricksDestroyed += maxBricks;
     }
 }
 
@@ -375,5 +374,5 @@ void GameManager::listenForQuit()
 
 int GameManager::calcScore()
 {
-    return (ball->getLives() + 1) * (totalBricksDestroyed);
+    return (totalBricksDestroyed);
 }
