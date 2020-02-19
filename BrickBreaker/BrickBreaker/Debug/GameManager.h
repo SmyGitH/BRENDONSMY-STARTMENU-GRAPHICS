@@ -48,7 +48,6 @@ class GameManager
         // if the user presses enter, space, or escape, go back to the main menu
         void listenForQuit();
 
-        // really only used once. should this be a function?
         // renders this project's credits to the screen
         void printCredits();
 
@@ -58,7 +57,7 @@ class GameManager
 
         Ball* ball;
         Entity* paddle;
-		Brick* brick;
+		Entity* brick;
         Mods* mod;
 
         SDL_Texture* bgTexture;

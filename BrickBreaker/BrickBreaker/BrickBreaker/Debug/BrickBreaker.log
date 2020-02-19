@@ -1,4 +1,9 @@
 ﻿  GameManager.cpp
 C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\GameManager.cpp(16,15): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Menu.cpp
 C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\GameManager.cpp(147,33): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\Menu.cpp(51,33): warning C4018:  '>': signed/unsigned mismatch
+  main.cpp
+  Generating Code...
+C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\Menu.cpp(60,23): warning C4018:  '<': signed/unsigned mismatch
   BrickBreaker.vcxproj -> C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\BrickBreaker.exe

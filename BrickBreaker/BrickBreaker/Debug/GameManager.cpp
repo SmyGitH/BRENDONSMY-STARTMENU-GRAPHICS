@@ -23,8 +23,8 @@ GameManager::GameManager(Window* window):
 	
 
     currentLevel = 1;
-    bricksLeft = 0;
-    maxBricks = 0;
+    bricksLeft = 6;
+    maxBricks = 10;
     totalBricksDestroyed = 0;
 	//printBrickX[0] = {30,120,210,300,390};
 	//printBrickY[0] = {30,60,90};
@@ -75,7 +75,7 @@ void GameManager::initGame(bool fresh)
 		addEntity(brick = new Brick(window, "redBrick.png", 300, 100, 3));
 		addEntity(brick = new Brick(window, "redBrick.png", 390, 100, 3));
 		addEntity(brick = new Brick(window, "redBrick.png", 480, 100, 3));
-        bricksLeft = maxBricks;
+		//bricksLeft = maxBricks;
         levelOver = false;
     }
 }
@@ -249,7 +249,7 @@ void GameManager::gameTick()
         {
             powerupTimer = 0;
             mod->fastPaddle();
-            paddle->setMoveRate(16);
+            paddle->setMoveRate(10);
             mod->remove();
             powerUpActive = true;
         }
@@ -263,7 +263,7 @@ void GameManager::gameTick()
 			{
 				powerupTimer = 0;
 				mod->slowerPaddle();
-				paddle->setMoveRate(4);
+				paddle->setMoveRate(6);
 				mod->remove();
 				powerUpActive = true;
 			}
