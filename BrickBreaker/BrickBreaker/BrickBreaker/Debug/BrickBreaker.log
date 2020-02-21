@@ -1,6 +1,4 @@
-﻿  Brick.cpp
-  GameManager.cpp
-C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\GameManager.cpp(17,15): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
-C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\GameManager.cpp(144,33): warning C4018:  '<': signed/unsigned mismatch
+﻿  GameManager.cpp
+C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\GameManager.cpp(17,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\GameManager.cpp(142,33): warning C4018: '<': signed/unsigned mismatch
   BrickBreaker.vcxproj -> C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\BrickBreaker.exe

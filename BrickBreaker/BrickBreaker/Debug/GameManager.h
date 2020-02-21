@@ -25,6 +25,9 @@ class GameManager
 
         // start running the game, Tick functions are run inside this method
         void runGame();
+
+        //place bricks on the screen
+        void buildMap();
 		
         void quit() { _quit = true; }
         void setState(int state);

@@ -20,13 +20,11 @@ GameManager::GameManager(Window* window):
     //gameBgTexture = window->loadTexture("bgNoTitle.png");
     htpTexture = window->loadTexture("HowToPlay.png");
 
-    paddle = new Entity(window, "paddle.png", 305, 490);
+   
 	
 
 
     currentLevel = 1;
-    bricksLeft = 0;
-    maxBricks = 10;
     totalBricksDestroyed = 0;
 
     powerupTimer = 120;
@@ -35,6 +33,7 @@ GameManager::GameManager(Window* window):
 
 void GameManager::initGame(bool fresh)
 {
+    paddle = new Entity(window, "paddle.png", 305, 490);
     paddle->setMoveRate(8);
     paddle->setTexture("paddle.png");
     paddle->setX(305);
@@ -43,10 +42,8 @@ void GameManager::initGame(bool fresh)
     paddle->stopMoving(MOVE_RIGHT);
     ball = new Ball(window, "ball.png", window->getWidth() / 2, window->getHeight() / 2, paddle);
 	ball->setOnPaddle(true);
-	brick = new Brick(window, "redBrick.png", 200, 200, 2);
-	
 
-	
+
 
     //used for random powerup spwaning
     randNum = rand() % 4;
@@ -67,11 +64,12 @@ void GameManager::initGame(bool fresh)
         totalBricksDestroyed = 0;
     } 
 
+    buildMap();
 
     if (currentState == STATE_PLAYING)
     {
+        
         Log::info("Loaded level " + std::to_string(currentLevel) + " with " + std::to_string(maxBricks) + " blocks.");
-		
         bricksLeft = maxBricks;
         levelOver = false;
     }
@@ -149,14 +147,52 @@ void GameManager::runGame()
     }
 }
 
+//Optimization 1
+void GameManager::buildMap()
+{
+    int blockCount = 0;
+    int health = 0;
+    int ypos = 300;
+    int xpos = 200;
+   
+    maxBricks = 0;
+
+    if (currentLevel == 1) {
+        health = 1;
+        for (int i = 0; i < 1; i++) {
+            addEntity(new Brick(getWindow(), "greenBrick.png", xpos, ypos, health));
+            xpos += 90;
+            maxBricks++;
+        }
+    }
+            
+    if (currentLevel == 2) {
+        health = 2;
+       
+        for (int i = 0; i < 2; i++) {
+            addEntity(new Brick(getWindow(), "yellowBrick.png", xpos, ypos, health));
+            xpos += 90;
+            maxBricks++;
+        }
+    }
+
+    if (currentLevel == 3) {
+        health = 3;
+        for (int i = 0; i < 3; i++) {
+            addEntity(new Brick(getWindow(), "redBrick.png", xpos, ypos, health));
+            xpos += 90;
+            maxBricks++;
+        }
+    }
+
+   
+}
+
 void GameManager::gameTick()
 {
     bool repeatKey = SDL_PollEvent(&event) == 1;
-	for (int i = 0; i < 5; i++) {
-		brick->update();
-	}
-		
 
+   
     if (levelOver)
     {
        // totalBricksDestroyed += maxBricks;
@@ -169,7 +205,6 @@ void GameManager::gameTick()
     if(ball->getLives() < 1)
     {
        
-        
         window->renderCenteredText("GAME OVER", window->getHeight()/4, {0,0,0}, 50, FONT_RENDER_BLENDED, {255,255,255});
         window->renderCenteredText("Score: " + std::to_string(calcScore()), window->getHeight()/2, {0,0,0}, 50, FONT_RENDER_BLENDED, {255,255,255});
         listenForQuit();
@@ -236,13 +271,11 @@ void GameManager::gameTick()
                     {
                         bricksLeft--;
                         totalBricksDestroyed++;
-                       
-                        
+                  
                     }
                     Log::info(std::to_string(bricksLeft) + " / " + std::to_string(maxBricks) + " bricks remaining");
                 }
 
-      
             }
             e->update();
         }
@@ -258,20 +291,20 @@ void GameManager::gameTick()
         {
             powerupTimer = 0;
             mod->fastPaddle();
-            paddle->setMoveRate(7);
+            paddle->setMoveRate(10);
             mod->remove();
             powerUpActive = true;
         }
     }
 
-    if(randNum == 1 && isPressed == true && !powerUpActive)
+    if (randNum == 0 && isPressed == true && !powerUpActive)
     {
         mod->update();
-        if(mod->collidedWith(paddle))
+        if (mod->collidedWith(paddle))
         {
             powerupTimer = 0;
-            paddle->setTexture("paddle_big.png");
-            mod->largePaddle();
+            mod->slowerPaddle();
+            paddle->setMoveRate(6);
             mod->remove();
             powerUpActive = true;
         }
@@ -335,6 +368,10 @@ void GameManager::gameTick()
         levelOver = true;
         totalBricksDestroyed += maxBricks;
     }
+
+    if (currentLevel > 3) {
+        currentState = STATE_WINNER;
+    }
 }
 
 void GameManager::addEntity(Entity* e)
@@ -381,5 +418,5 @@ void GameManager::listenForQuit()
 
 int GameManager::calcScore()
 {
-    return (ball->getLives() + 1) * (totalBricksDestroyed);
+    return (totalBricksDestroyed);
 }
