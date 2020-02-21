@@ -143,95 +143,10 @@ void GameManager::runGame()
     }
 }
 
-//Optimization 1 Wasn't happy with my original printing of the bricks so I chose to improve upon my early mistakes
-void GameManager::buildMap()
-{
-    int blockCount = 0;
-    int health = 0;
-    int ypos = 30;
-    int xpos = 5;
-    maxBricks = 0;
-
-    //setting up level 1
-    if (currentLevel == 1) {
-        health = 1;
-
-         for (int i = 0; i < 7; i++) {
-             addEntity(new Brick(getWindow(), "greenBrick.png", xpos, ypos, health));
-             xpos += 90;
-             maxBricks++;
-         }
-    }
-
-
-    //setting up level 2
-    if (currentLevel == 2) {
-        health = 2;
-        for (int j = 0; j < 2; j++) {
-            for (int i = 0; i < 7; i++) {
-                addEntity(new Brick(getWindow(), "yellowBrick.png", xpos, ypos, health));
-                xpos += 90;
-                maxBricks++;
-            }
-            ypos += 30;
-            xpos = 5;
-       }
-         
-    }  
-
-    //setting up level 3
-    if (currentLevel == 3) {
-        health = 3;
-        for (int j = 0; j < 3; j++) {
-            for (int i = 0; i < 7; i++) {
-                addEntity(new Brick(getWindow(), "redBrick.png", xpos, ypos, health));
-                xpos += 90;
-                maxBricks++;
-            }
-            ypos += 30;
-            xpos = 5;
-        }
-    }
-}
-
-//Optimization 2 Wanted to make the Game Tick cleaner and more efficient
-void GameManager::BrickDamage() {
-
-    //Collision Damage
-    bool collidedThisTick = false;
-    for (Entity* e : entities)
-    {
-
-        if (e->isActive())
-        {
-
-            if ((ball->collidedWith(e)) && (e->isActive()) && !collidedThisTick)
-            {
-                collidedThisTick = true;
-                ball->handleCollision(e);
-                if (e->getTypeId() == TYPEID_BRICK)
-                {
-                    if (!((Brick*)e)->dealDamage(1))
-                    {
-                        bricksLeft--;
-                        totalBricksDestroyed++;
-
-                    }
-                    Log::info(std::to_string(bricksLeft) + " / " + std::to_string(maxBricks) + " bricks remaining");
-                }
-
-            }
-            e->update();
-        }
-    }
-
-}
-
 void GameManager::gameTick()
 {
-    bool repeatKey = SDL_PollEvent(&event) == 1;
+    KeyboardState();
 
-   
     if (levelOver)
     {
        // totalBricksDestroyed += maxBricks;
@@ -251,123 +166,10 @@ void GameManager::gameTick()
         return;
     }
 
-    switch (event.type)
-    {
-    // if user clicks the red X
-    case SDL_QUIT:
-        _quit = true;
-        break;
-
-    //Paddle Movement
-    case SDL_KEYDOWN:
-        switch (event.key.keysym.sym)
-        {
-        case SDLK_LEFT:
-            paddle->startMoving(MOVE_LEFT);
-            break;
-        case SDLK_RIGHT:
-            paddle->startMoving(MOVE_RIGHT);
-            break;
-        case SDLK_SPACE:
-            if (ball->isOnPaddle())
-                ball->detach();
-            isPressed = true;
-            break;
-        case SDLK_ESCAPE:
-            if (repeatKey)
-            {
-                setState(STATE_MENU);
-                return;
-            }
-        }
-        break;
-
-    case SDL_KEYUP:
-        switch (event.key.keysym.sym)
-        {
-        case SDLK_LEFT:
-            paddle->stopMoving(MOVE_LEFT);
-            break;
-        case SDLK_RIGHT:
-            paddle->stopMoving(MOVE_RIGHT);
-            break;
-        }
-        break;
-    }
+    
 	
     BrickDamage();
-
-	//Power ups
-    powerupTimer++;
-    
-    if(randNum == 0 && isPressed == true && !powerUpActive)
-    {
-        mod->update();
-        if(mod->collidedWith(paddle))
-        {
-            powerupTimer = 0;
-            mod->fastPaddle();
-            paddle->setMoveRate(10);
-            mod->remove();
-            powerUpActive = true;
-        }
-    }
-
-    if (randNum == 1 && isPressed == true && !powerUpActive)
-    {
-        mod->update();
-        if (mod->collidedWith(paddle))
-        {
-            powerupTimer = 0;
-            mod->slowerPaddle();
-            paddle->setMoveRate(6);
-            mod->remove();
-            powerUpActive = true;
-        }
-    }
-
-    if(randNum == 2 && isPressed == true && !powerUpActive)
-    {
-        mod->update();
-        if(mod->collidedWith(paddle))
-        {
-            powerupTimer = 0;
-            paddle->setTexture("paddle_big.png");
-            mod->largePaddle();
-            mod->remove();
-            powerUpActive = true;
-        }
-    }
-
-    if(randNum == 3 && isPressed == true && !powerUpActive)
-    {
-        mod->update();
-        if(mod->collidedWith(paddle))
-        {
-            powerupTimer = 0;
-            paddle->setTexture("paddle_small.png");
-            mod->smallPaddle();
-            mod->remove();
-            powerUpActive = true;
-        }
-    }
-    uint8_t c = powerupTimer;
-    if (randNum == 0 && powerupTimer < 254)
-    {
-        window->renderCenteredText("PADDLE SPEED DECREASED!", 300, { c,c,c }, 30, FONT_RENDER_BLENDED, { 100,100,100 });
-    }
-    if (randNum == 1 && powerupTimer < 254)
-    {
-        window->renderCenteredText("PADDLE SPEED INCREASED!", 300, { c,c,c }, 30, FONT_RENDER_BLENDED, { 100,100,100 });
-    }
-    if (randNum == 2 && powerupTimer < 254)
-    {
-        window->renderCenteredText("PADDLE SIZE INCREASED!", 300, { c,c,c }, 30, FONT_RENDER_BLENDED, { 100,100,100 });
-    }
-    if (randNum == 3 && powerupTimer < 254)
-    {
-        window->renderCenteredText("PADDLE SIZE DECREASED!", 300, { c,c,c }, 30, FONT_RENDER_BLENDED, { 100,100,100 });
-    }
+    PowerUp();
 
     if (ball->collidedWith(paddle))
     {
@@ -433,6 +235,212 @@ void GameManager::listenForQuit()
                 setState(STATE_MENU);
             }
         }
+    }
+}
+
+//Optimization 1 Wasn't happy with my original printing of the bricks so I chose to improve upon my early mistakes
+void GameManager::buildMap()
+{
+    int blockCount = 0;
+    int health = 0;
+    int ypos = 30;
+    int xpos = 5;
+    maxBricks = 0;
+
+    //setting up level 1
+    if (currentLevel == 1) {
+        health = 1;
+
+        for (int i = 0; i < 7; i++) {
+            addEntity(new Brick(getWindow(), "greenBrick.png", xpos, ypos, health));
+            xpos += 90;
+            maxBricks++;
+        }
+    }
+
+
+    //setting up level 2
+    if (currentLevel == 2) {
+        health = 2;
+        for (int j = 0; j < 2; j++) {
+            for (int i = 0; i < 7; i++) {
+                addEntity(new Brick(getWindow(), "yellowBrick.png", xpos, ypos, health));
+                xpos += 90;
+                maxBricks++;
+            }
+            ypos += 30;
+            xpos = 5;
+        }
+
+    }
+
+    //setting up level 3
+    if (currentLevel == 3) {
+        health = 3;
+        for (int j = 0; j < 3; j++) {
+            for (int i = 0; i < 7; i++) {
+                addEntity(new Brick(getWindow(), "redBrick.png", xpos, ypos, health));
+                xpos += 90;
+                maxBricks++;
+            }
+            ypos += 30;
+            xpos = 5;
+        }
+    }
+}
+
+//Optimization 2 Wanted to make the Game Tick cleaner and more efficient
+void GameManager::BrickDamage() {
+
+    //Collision Damage
+    bool collidedThisTick = false;
+    for (Entity* e : entities)
+    {
+
+        if (e->isActive())
+        {
+
+            if ((ball->collidedWith(e)) && (e->isActive()) && !collidedThisTick)
+            {
+                collidedThisTick = true;
+                ball->handleCollision(e);
+                if (e->getTypeId() == TYPEID_BRICK)
+                {
+                    if (!((Brick*)e)->dealDamage(1))
+                    {
+                        bricksLeft--;
+                        totalBricksDestroyed++;
+
+                    }
+                    Log::info(std::to_string(bricksLeft) + " / " + std::to_string(maxBricks) + " bricks remaining");
+                }
+
+            }
+            e->update();
+        }
+    }
+
+}
+//Optimization 3 Chose to clean up the Game Tick even further and is running much smoother after removing power ups and brick damage
+void GameManager::PowerUp() {
+
+    powerupTimer++;
+
+    if (randNum == 0 && isPressed == true && !powerUpActive)
+    {
+        mod->update();
+        if (mod->collidedWith(paddle))
+        {
+            powerupTimer = 0;
+            mod->fastPaddle();
+            paddle->setMoveRate(10);
+            mod->remove();
+            powerUpActive = true;
+        }
+    }
+
+    if (randNum == 1 && isPressed == true && !powerUpActive)
+    {
+        mod->update();
+        if (mod->collidedWith(paddle))
+        {
+            powerupTimer = 0;
+            mod->slowerPaddle();
+            paddle->setMoveRate(6);
+            mod->remove();
+            powerUpActive = true;
+        }
+    }
+
+    if (randNum == 2 && isPressed == true && !powerUpActive)
+    {
+        mod->update();
+        if (mod->collidedWith(paddle))
+        {
+            powerupTimer = 0;
+            paddle->setTexture("paddle_big.png");
+            mod->largePaddle();
+            mod->remove();
+            powerUpActive = true;
+        }
+    }
+
+    if (randNum == 3 && isPressed == true && !powerUpActive)
+    {
+        mod->update();
+        if (mod->collidedWith(paddle))
+        {
+            powerupTimer = 0;
+            paddle->setTexture("paddle_small.png");
+            mod->smallPaddle();
+            mod->remove();
+            powerUpActive = true;
+        }
+    }
+    uint8_t c = powerupTimer;
+    if (randNum == 0 && powerupTimer < 254)
+    {
+        window->renderCenteredText("PADDLE SPEED INCREASED!", 300, { c,c,c }, 30, FONT_RENDER_BLENDED, { 100,100,100 });
+    }
+    if (randNum == 1 && powerupTimer < 254)
+    {
+        window->renderCenteredText("PADDLE SPEED DECREASED!", 300, { c,c,c }, 30, FONT_RENDER_BLENDED, { 100,100,100 });
+    }
+    if (randNum == 2 && powerupTimer < 254)
+    {
+        window->renderCenteredText("PADDLE SIZE INCREASED!", 300, { c,c,c }, 30, FONT_RENDER_BLENDED, { 100,100,100 });
+    }
+    if (randNum == 3 && powerupTimer < 254)
+    {
+        window->renderCenteredText("PADDLE SIZE DECREASED!", 300, { c,c,c }, 30, FONT_RENDER_BLENDED, { 100,100,100 });
+    }
+}
+
+void GameManager::KeyboardState() {
+    bool repeatKey = SDL_PollEvent(&event) == 1;
+
+    switch (event.type)
+    {
+        // if user clicks the red X
+    case SDL_QUIT:
+        _quit = true;
+        break;
+
+        //Paddle Movement
+    case SDL_KEYDOWN:
+        switch (event.key.keysym.sym)
+        {
+        case SDLK_LEFT:
+            paddle->startMoving(MOVE_LEFT);
+            break;
+        case SDLK_RIGHT:
+            paddle->startMoving(MOVE_RIGHT);
+            break;
+        case SDLK_SPACE:
+            if (ball->isOnPaddle())
+                ball->detach();
+            isPressed = true;
+            break;
+        case SDLK_ESCAPE:
+            if (repeatKey)
+            {
+                setState(STATE_MENU);
+                return;
+            }
+        }
+        break;
+
+    case SDL_KEYUP:
+        switch (event.key.keysym.sym)
+        {
+        case SDLK_LEFT:
+            paddle->stopMoving(MOVE_LEFT);
+            break;
+        case SDLK_RIGHT:
+            paddle->stopMoving(MOVE_RIGHT);
+            break;
+        }
+        break;
     }
 }
 

@@ -15,11 +15,11 @@ Info:  Loaded level 1 with 7 blocks.
 Info:  Detached ball from paddle.
 Info:  Ball hit something!
 Info:  6 / 7 bricks remaining
-Info:  Make the paddle faster!
+Info:  Changed texture of entity from paddle.png to paddle_big.png
+Info:  Spawn bigger paddle
 Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  5 / 7 bricks remaining
-Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  4 / 7 bricks remaining
 Info:  Ball hit something!
@@ -27,7 +27,3 @@ Info:  Ball hit something!
 Info:  3 / 7 bricks remaining
 Info:  Lives left: 2
 Info:  Placed ball on paddle.
-Info:  Ball hit something!
-Info:  Detached ball from paddle.
-Info:  Ball hit something!
-Info:  2 / 7 bricks remaining

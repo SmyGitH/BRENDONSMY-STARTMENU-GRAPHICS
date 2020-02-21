@@ -31,6 +31,12 @@ class GameManager
 
         //Brick collision Damage
         void BrickDamage();
+
+        //Power UP Function
+        void PowerUp();
+
+        //Paddle Movement
+        void KeyboardState();
 		
         void quit() { _quit = true; }
         void setState(int state);
