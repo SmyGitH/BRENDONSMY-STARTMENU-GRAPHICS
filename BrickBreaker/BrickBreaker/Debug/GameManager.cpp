@@ -20,14 +20,10 @@ GameManager::GameManager(Window* window):
     //gameBgTexture = window->loadTexture("bgNoTitle.png");
     htpTexture = window->loadTexture("HowToPlay.png");
 
-   
-	
-
-
     currentLevel = 1;
     totalBricksDestroyed = 0;
 
-    powerupTimer = 120;
+    powerupTimer = 9999;
     powerUpActive = false;
 }
 
@@ -68,7 +64,6 @@ void GameManager::initGame(bool fresh)
 
     if (currentState == STATE_PLAYING)
     {
-        
         Log::info("Loaded level " + std::to_string(currentLevel) + " with " + std::to_string(maxBricks) + " blocks.");
         bricksLeft = maxBricks;
         levelOver = false;
@@ -89,6 +84,7 @@ void GameManager::runGame()
     uint32_t frameCount = 0;
     fpsTimer.start();
 
+    //Game States
     while (!_quit)
     {
         window->clear();
@@ -147,7 +143,7 @@ void GameManager::runGame()
     }
 }
 
-//Optimization 1
+//Optimization 1 Wasn't happy with my original printing of the bricks so I chose to improve upon my early mistakes
 void GameManager::buildMap()
 {
     int blockCount = 0;
@@ -156,16 +152,19 @@ void GameManager::buildMap()
     int xpos = 5;
     maxBricks = 0;
 
+    //setting up level 1
     if (currentLevel == 1) {
         health = 1;
 
          for (int i = 0; i < 7; i++) {
              addEntity(new Brick(getWindow(), "greenBrick.png", xpos, ypos, health));
              xpos += 90;
-              maxBricks++;
+             maxBricks++;
          }
     }
-            
+
+
+    //setting up level 2
     if (currentLevel == 2) {
         health = 2;
         for (int j = 0; j < 2; j++) {
@@ -178,8 +177,9 @@ void GameManager::buildMap()
             xpos = 5;
        }
          
-    }   
+    }  
 
+    //setting up level 3
     if (currentLevel == 3) {
         health = 3;
         for (int j = 0; j < 3; j++) {
@@ -192,8 +192,39 @@ void GameManager::buildMap()
             xpos = 5;
         }
     }
+}
 
-   
+//Optimization 2 Wanted to make the Game Tick cleaner and more efficient
+void GameManager::BrickDamage() {
+
+    //Collision Damage
+    bool collidedThisTick = false;
+    for (Entity* e : entities)
+    {
+
+        if (e->isActive())
+        {
+
+            if ((ball->collidedWith(e)) && (e->isActive()) && !collidedThisTick)
+            {
+                collidedThisTick = true;
+                ball->handleCollision(e);
+                if (e->getTypeId() == TYPEID_BRICK)
+                {
+                    if (!((Brick*)e)->dealDamage(1))
+                    {
+                        bricksLeft--;
+                        totalBricksDestroyed++;
+
+                    }
+                    Log::info(std::to_string(bricksLeft) + " / " + std::to_string(maxBricks) + " bricks remaining");
+                }
+
+            }
+            e->update();
+        }
+    }
+
 }
 
 void GameManager::gameTick()
@@ -210,6 +241,7 @@ void GameManager::gameTick()
         return;
     }
 
+    //Game Over Screen
     if(ball->getLives() < 1)
     {
        
@@ -226,6 +258,7 @@ void GameManager::gameTick()
         _quit = true;
         break;
 
+    //Paddle Movement
     case SDL_KEYDOWN:
         switch (event.key.keysym.sym)
         {
@@ -262,32 +295,7 @@ void GameManager::gameTick()
         break;
     }
 	
-	bool collidedThisTick = false;
-    for (Entity* e : entities)
-    {
-       
-        if (e->isActive())
-        {
-            
-            if ((ball->collidedWith(e)) && (e->isActive()) && !collidedThisTick)
-            {
-                collidedThisTick = true;
-                ball->handleCollision(e);
-                if (e->getTypeId() == TYPEID_BRICK)
-                {
-                    if (!((Brick*)e)->dealDamage(1))
-                    {
-                        bricksLeft--;
-                        totalBricksDestroyed++;
-                  
-                    }
-                    Log::info(std::to_string(bricksLeft) + " / " + std::to_string(maxBricks) + " bricks remaining");
-                }
-
-            }
-            e->update();
-        }
-    }
+    BrickDamage();
 
 	//Power ups
     powerupTimer++;
@@ -382,23 +390,27 @@ void GameManager::gameTick()
     }
 }
 
+//Adding brick into vector
 void GameManager::addEntity(Entity* e)
 {
 	entities.push_back(e);
 }
 
+//Game State
 void GameManager::setState(int state)
 {
     Log::info("Set state to " + std::to_string(state));
     currentState = state;
 }
 
+//Print Credits
 void GameManager::printCredits()
 {
     window->renderCenteredText("Brendon Smy", 100, { 0, 0, 0 }, 45, FONT_RENDER_BLENDED, { 0, 0, 0 });
    
 }
 
+//Quitting the game
 void GameManager::listenForQuit()
 {
     SDL_Event currEvent;
@@ -424,6 +436,7 @@ void GameManager::listenForQuit()
     }
 }
 
+//Calculating score
 int GameManager::calcScore()
 {
     return (totalBricksDestroyed);

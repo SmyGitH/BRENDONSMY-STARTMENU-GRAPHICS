@@ -1,5 +1,3 @@
-Info:  Set state to 4
-Info:  Set state to 0
 Info:  Set state to 1
 Info:  Created new entity with texture paddle.png at (305, 305)
 Info:  Changed texture of entity from paddle.png to paddle.png
@@ -24,70 +22,12 @@ Info:  5 / 7 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  4 / 7 bricks remaining
-Info:  Lives left: 2
-Info:  Placed ball on paddle.
-Info:  Detached ball from paddle.
+Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  3 / 7 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  2 / 7 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  1 / 7 bricks remaining
-Info:  Lives left: 1
-Info:  Placed ball on paddle.
-Info:  Detached ball from paddle.
-Info:  Ball hit something!
-Info:  0 / 7 bricks remaining
-Info:  Created new entity with texture paddle.png at (305, 305)
-Info:  Changed texture of entity from paddle.png to paddle.png
-Info:  Created new entity with texture ball.png at (320, 320)
-Info:  Placed ball on paddle.
-Info:  Created new entity with texture PowerUP.png at (320, 320)
-Info:  Created new entity with texture yellowBrick.png at (5, 5)
-Info:  Created new entity with texture yellowBrick.png at (95, 95)
-Info:  Created new entity with texture yellowBrick.png at (185, 185)
-Info:  Created new entity with texture yellowBrick.png at (275, 275)
-Info:  Created new entity with texture yellowBrick.png at (365, 365)
-Info:  Created new entity with texture yellowBrick.png at (455, 455)
-Info:  Created new entity with texture yellowBrick.png at (545, 545)
-Info:  Created new entity with texture yellowBrick.png at (5, 5)
-Info:  Created new entity with texture yellowBrick.png at (95, 95)
-Info:  Created new entity with texture yellowBrick.png at (185, 185)
-Info:  Created new entity with texture yellowBrick.png at (275, 275)
-Info:  Created new entity with texture yellowBrick.png at (365, 365)
-Info:  Created new entity with texture yellowBrick.png at (455, 455)
-Info:  Created new entity with texture yellowBrick.png at (545, 545)
-Info:  Loaded level 2 with 14 blocks.
-Info:  Detached ball from paddle.
-Info:  Ball hit something!
-Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
-Info:  14 / 14 bricks remaining
-Info:  Changed texture of entity from paddle.png to paddle_small.png
-Info:  Spawn smaller paddle
 Info:  Lives left: 2
 Info:  Placed ball on paddle.
 Info:  Ball hit something!
 Info:  Detached ball from paddle.
 Info:  Ball hit something!
-Info:  13 / 14 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
-Info:  13 / 14 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
-Info:  13 / 14 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
-Info:  13 / 14 bricks remaining
+Info:  2 / 7 bricks remaining

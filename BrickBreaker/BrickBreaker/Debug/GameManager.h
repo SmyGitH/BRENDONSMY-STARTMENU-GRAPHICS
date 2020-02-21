@@ -28,6 +28,9 @@ class GameManager
 
         //place bricks on the screen
         void buildMap();
+
+        //Brick collision Damage
+        void BrickDamage();
 		
         void quit() { _quit = true; }
         void setState(int state);
