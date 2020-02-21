@@ -152,36 +152,44 @@ void GameManager::buildMap()
 {
     int blockCount = 0;
     int health = 0;
-    int ypos = 300;
-    int xpos = 200;
-   
+    int ypos = 30;
+    int xpos = 5;
     maxBricks = 0;
 
     if (currentLevel == 1) {
         health = 1;
-        for (int i = 0; i < 1; i++) {
-            addEntity(new Brick(getWindow(), "greenBrick.png", xpos, ypos, health));
-            xpos += 90;
-            maxBricks++;
-        }
+
+         for (int i = 0; i < 7; i++) {
+             addEntity(new Brick(getWindow(), "greenBrick.png", xpos, ypos, health));
+             xpos += 90;
+              maxBricks++;
+         }
     }
             
     if (currentLevel == 2) {
         health = 2;
-       
-        for (int i = 0; i < 2; i++) {
-            addEntity(new Brick(getWindow(), "yellowBrick.png", xpos, ypos, health));
-            xpos += 90;
-            maxBricks++;
-        }
-    }
+        for (int j = 0; j < 2; j++) {
+            for (int i = 0; i < 7; i++) {
+                addEntity(new Brick(getWindow(), "yellowBrick.png", xpos, ypos, health));
+                xpos += 90;
+                maxBricks++;
+            }
+            ypos += 30;
+            xpos = 5;
+       }
+         
+    }   
 
     if (currentLevel == 3) {
         health = 3;
-        for (int i = 0; i < 3; i++) {
-            addEntity(new Brick(getWindow(), "redBrick.png", xpos, ypos, health));
-            xpos += 90;
-            maxBricks++;
+        for (int j = 0; j < 3; j++) {
+            for (int i = 0; i < 7; i++) {
+                addEntity(new Brick(getWindow(), "redBrick.png", xpos, ypos, health));
+                xpos += 90;
+                maxBricks++;
+            }
+            ypos += 30;
+            xpos = 5;
         }
     }
 
@@ -297,7 +305,7 @@ void GameManager::gameTick()
         }
     }
 
-    if (randNum == 0 && isPressed == true && !powerUpActive)
+    if (randNum == 1 && isPressed == true && !powerUpActive)
     {
         mod->update();
         if (mod->collidedWith(paddle))
@@ -338,11 +346,11 @@ void GameManager::gameTick()
     uint8_t c = powerupTimer;
     if (randNum == 0 && powerupTimer < 254)
     {
-        window->renderCenteredText("PADDLE SPEED INCREASED!", 300, { c,c,c }, 30, FONT_RENDER_BLENDED, { 100,100,100 });
+        window->renderCenteredText("PADDLE SPEED DECREASED!", 300, { c,c,c }, 30, FONT_RENDER_BLENDED, { 100,100,100 });
     }
     if (randNum == 1 && powerupTimer < 254)
     {
-        window->renderCenteredText("PADDLE SIZE INCREASED!", 300, { c,c,c }, 30, FONT_RENDER_BLENDED, { 100,100,100 });
+        window->renderCenteredText("PADDLE SPEED INCREASED!", 300, { c,c,c }, 30, FONT_RENDER_BLENDED, { 100,100,100 });
     }
     if (randNum == 2 && powerupTimer < 254)
     {
