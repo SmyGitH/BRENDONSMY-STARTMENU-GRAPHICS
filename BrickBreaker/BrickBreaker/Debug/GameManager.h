@@ -37,6 +37,9 @@ class GameManager
 
         //Paddle Movement
         void KeyboardState();
+
+        //Level State
+        void LevelState();
 		
         void quit() { _quit = true; }
         void setState(int state);

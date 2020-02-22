@@ -145,31 +145,24 @@ void GameManager::runGame()
 
 void GameManager::gameTick()
 {
-    KeyboardState();
 
-    if (levelOver)
-    {
-       // totalBricksDestroyed += maxBricks;
-        currentLevel++;
-        initGame(false);
-        levelOver = false;
-        return;
-    }
+    KeyboardState();
+    LevelState();
+    BrickDamage();
+    PowerUp();
+    
+
+
 
     //Game Over Screen
-    if(ball->getLives() < 1)
+    if (ball->getLives() < 1)
     {
-       
-        window->renderCenteredText("GAME OVER", window->getHeight()/4, {0,0,0}, 50, FONT_RENDER_BLENDED, {255,255,255});
-        window->renderCenteredText("Score: " + std::to_string(calcScore()), window->getHeight()/2, {0,0,0}, 50, FONT_RENDER_BLENDED, {255,255,255});
+
+        window->renderCenteredText("GAME OVER", window->getHeight() / 4, { 0,0,0 }, 50, FONT_RENDER_BLENDED, { 255,255,255 });
+        window->renderCenteredText("Score: " + std::to_string(calcScore()), window->getHeight() / 2, { 0,0,0 }, 50, FONT_RENDER_BLENDED, { 255,255,255 });
         listenForQuit();
         return;
     }
-
-    
-	
-    BrickDamage();
-    PowerUp();
 
     if (ball->collidedWith(paddle))
     {
@@ -181,15 +174,7 @@ void GameManager::gameTick()
     window->renderText("Lives: " + std::to_string(ball->getLives()), 5, 0, { 0, 0, 0 }, 25, FONT_RENDER_BLENDED, { 0, 0, 0 });
     window->renderText("Score: " + std::to_string(calcScore()), window->getWidth() - 100, 0, { 0, 0, 0 }, 25, FONT_RENDER_BLENDED, { 0, 0, 0 });
 
-    if (bricksLeft == 0)
-    {
-        levelOver = true;
-        totalBricksDestroyed += maxBricks;
-    }
-
-    if (currentLevel > 3) {
-        currentState = STATE_WINNER;
-    }
+   
 }
 
 //Adding brick into vector
@@ -396,6 +381,7 @@ void GameManager::PowerUp() {
     }
 }
 
+//Keyboard Presses and SDL window states (Further optimization)
 void GameManager::KeyboardState() {
     bool repeatKey = SDL_PollEvent(&event) == 1;
 
@@ -441,6 +427,29 @@ void GameManager::KeyboardState() {
             break;
         }
         break;
+    }
+}
+
+void GameManager::LevelState() {
+
+    if (levelOver)
+    {
+        // totalBricksDestroyed += maxBricks;
+        currentLevel++;
+        initGame(false);
+        levelOver = false;
+        return;
+    }
+
+
+    if (bricksLeft == 0)
+    {
+        levelOver = true;
+        totalBricksDestroyed += maxBricks;
+    }
+
+    if (currentLevel > 3) {
+        currentState = STATE_WINNER;
     }
 }
 
