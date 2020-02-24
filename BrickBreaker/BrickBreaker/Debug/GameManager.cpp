@@ -147,13 +147,15 @@ void GameManager::gameTick()
 {
 
     KeyboardState();
-    LevelState();
+
+    if (levelOver || currentLevel == 3) {
+        LevelState();
+    }
+    
     BrickDamage();
     PowerUp();
+
     
-
-
-
     //Game Over Screen
     if (ball->getLives() < 1)
     {
@@ -163,6 +165,9 @@ void GameManager::gameTick()
         listenForQuit();
         return;
     }
+
+
+   
 
     if (ball->collidedWith(paddle))
     {
@@ -451,6 +456,8 @@ void GameManager::LevelState() {
     if (currentLevel > 3) {
         currentState = STATE_WINNER;
     }
+
+    
 }
 
 //Calculating score
