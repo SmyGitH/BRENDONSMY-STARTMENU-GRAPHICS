@@ -65,7 +65,7 @@ class GameManager
 
         Ball* ball;
         Entity* paddle;
-        Entity* entity;
+        Brick* brick;
 	
 		
         Mods* mod;
@@ -109,7 +109,7 @@ class GameManager
         // this is where most of the game happens
         void gameTick();
 
-        //Adding AI functions
+        // AI functions
         void controlAI();
 
         bool _quit;

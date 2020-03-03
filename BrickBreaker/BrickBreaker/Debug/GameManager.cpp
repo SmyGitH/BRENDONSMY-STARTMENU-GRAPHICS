@@ -17,7 +17,7 @@ GameManager::GameManager(Window* window):
     srand(time(NULL));
 
     bgTexture = window->loadTexture("bg.png");
-    //gameBgTexture = window->loadTexture("bgNoTitle.png");
+    gameBgTexture = window->loadTexture("bgNoTitle.png");
     htpTexture = window->loadTexture("HowToPlay.png");
 
     currentLevel = 1;
@@ -60,11 +60,11 @@ void GameManager::initGame(bool fresh)
         totalBricksDestroyed = 0;
     } 
 
-    
+    buildMap();
 
     if (currentState == STATE_PLAYING)
     {
-        buildMap();
+       
         Log::info("Loaded level " + std::to_string(currentLevel) + " with " + std::to_string(maxBricks) + " blocks.");
         bricksLeft = maxBricks;
         levelOver = false;
@@ -149,9 +149,8 @@ void GameManager::gameTick()
 
     bool repeatKey = SDL_PollEvent(&event) == 1;
 
-    controlAI();
-    
-
+    //
+  
     switch (event.type)
     {
         // if user clicks the red X
@@ -160,7 +159,7 @@ void GameManager::gameTick()
         break;
 
         //Paddle Movement
-   /* case SDL_KEYDOWN:
+    case SDL_KEYDOWN:
         switch (event.key.keysym.sym)
         {
         case SDLK_LEFT:
@@ -173,6 +172,9 @@ void GameManager::gameTick()
             if (ball->isOnPaddle())
                 ball->detach();
             isPressed = true;
+            break;
+        case SDLK_a:
+            controlAI();
             break;
         case SDLK_ESCAPE:
             if (repeatKey)
@@ -193,7 +195,7 @@ void GameManager::gameTick()
             paddle->stopMoving(MOVE_RIGHT);
             break;
         }
-        break;*/
+        break;
     }
 
    
@@ -353,7 +355,7 @@ void GameManager::BrickDamage() {
 
     //Collision Damage
     bool collidedThisTick = false;
-
+    
     for (Entity* e : entities)
     {
 
@@ -467,16 +469,11 @@ void GameManager::controlAI()
         isPressed = true;
     }
     
-    if (ball->getX() < 400) {
-        paddle->startMoving(MOVE_LEFT);
-    }
-
-    if (ball->getX() > 400) {
-        paddle->startMoving(MOVE_RIGHT);
-    }
+    
+   paddle->startMoving(ball->getX());
+    
    
-     
-       // paddle->startMoving(MOVE_RIGHT);
+   // paddle->startMoving(MOVE_RIGHT);
        
 }
 

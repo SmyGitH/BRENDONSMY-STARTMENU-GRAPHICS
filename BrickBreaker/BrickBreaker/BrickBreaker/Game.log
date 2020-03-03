@@ -15,44 +15,7 @@ Info:  Loaded level 1 with 7 blocks.
 Info:  Detached ball from paddle.
 Info:  Ball hit something!
 Info:  6 / 7 bricks remaining
-Info:  Lives left: 2
-Info:  Placed ball on paddle.
-Info:  Detached ball from paddle.
+Info:  Make the paddle slower!
 Info:  Ball hit something!
-Info:  5 / 7 bricks remaining
-Info:  Lives left: 1
-Info:  Placed ball on paddle.
-Info:  Detached ball from paddle.
-Info:  Ball hit something!
-Info:  4 / 7 bricks remaining
-Info:  Ball hit something!
-Info:  3 / 7 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  2 / 7 bricks remaining
-Info:  Lives left: 0
-Info:  Placed ball on paddle.
-Info:  Detached ball from paddle.
-Info:  Set state to 0
-Info:  Set state to 1
-Info:  Created new entity with texture paddle.png at (305, 305)
-Info:  Changed texture of entity from paddle.png to paddle.png
-Info:  Created new entity with texture ball.png at (320, 320)
-Info:  Placed ball on paddle.
-Info:  Created new entity with texture PowerUP.png at (320, 320)
-Info:  Created new entity with texture greenBrick.png at (5, 5)
-Info:  Created new entity with texture greenBrick.png at (95, 95)
-Info:  Created new entity with texture greenBrick.png at (185, 185)
-Info:  Created new entity with texture greenBrick.png at (275, 275)
-Info:  Created new entity with texture greenBrick.png at (365, 365)
-Info:  Created new entity with texture greenBrick.png at (455, 455)
-Info:  Created new entity with texture greenBrick.png at (545, 545)
-Info:  Loaded level 1 with 7 blocks.
-Info:  Detached ball from paddle.
-Info:  Ball hit something!
-Info:  6 / 7 bricks remaining
-Info:  Lives left: 2
-Info:  Placed ball on paddle.
-Info:  Detached ball from paddle.
 Info:  Ball hit something!
 Info:  5 / 7 bricks remaining
