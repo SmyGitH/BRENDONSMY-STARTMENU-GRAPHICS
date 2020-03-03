@@ -23,6 +23,10 @@ public:
     // detaches the ball from the paddle and gives the ball some initial velocity
     void detach();
 
+    //Getters for velocity
+    int getXVelocity() { return xVelocity; }
+    int getYVelocity() { return yVelocity; }
+
     void setLives(int count);
     int getLives() { return lives; }
 

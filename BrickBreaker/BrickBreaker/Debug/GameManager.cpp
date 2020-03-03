@@ -60,10 +60,11 @@ void GameManager::initGame(bool fresh)
         totalBricksDestroyed = 0;
     } 
 
-    buildMap();
+    
 
     if (currentState == STATE_PLAYING)
     {
+        buildMap();
         Log::info("Loaded level " + std::to_string(currentLevel) + " with " + std::to_string(maxBricks) + " blocks.");
         bricksLeft = maxBricks;
         levelOver = false;
@@ -146,14 +147,80 @@ void GameManager::runGame()
 void GameManager::gameTick()
 {
 
-    KeyboardState();
+    bool repeatKey = SDL_PollEvent(&event) == 1;
 
-    if (levelOver || currentLevel == 3) {
-        LevelState();
+    controlAI();
+    
+
+    switch (event.type)
+    {
+        // if user clicks the red X
+    case SDL_QUIT:
+        _quit = true;
+        break;
+
+        //Paddle Movement
+   /* case SDL_KEYDOWN:
+        switch (event.key.keysym.sym)
+        {
+        case SDLK_LEFT:
+            paddle->startMoving(MOVE_LEFT);
+            break;
+        case SDLK_RIGHT:
+            paddle->startMoving(MOVE_RIGHT);
+            break;
+        case SDLK_SPACE:
+            if (ball->isOnPaddle())
+                ball->detach();
+            isPressed = true;
+            break;
+        case SDLK_ESCAPE:
+            if (repeatKey)
+            {
+                setState(STATE_MENU);
+                return;
+            }
+        }
+        break;
+
+    case SDL_KEYUP:
+        switch (event.key.keysym.sym)
+        {
+        case SDLK_LEFT:
+            paddle->stopMoving(MOVE_LEFT);
+            break;
+        case SDLK_RIGHT:
+            paddle->stopMoving(MOVE_RIGHT);
+            break;
+        }
+        break;*/
     }
+
+   
     
     BrickDamage();
     PowerUp();
+
+
+    if (levelOver)
+    {
+        // totalBricksDestroyed += maxBricks;
+        currentLevel++;
+        initGame(false);
+        levelOver = false;
+        return;
+    }
+
+
+    if (bricksLeft == 0)
+    {
+        levelOver = true;
+        totalBricksDestroyed += maxBricks;
+    }
+
+    if (currentLevel > 3) {
+        currentState = STATE_WINNER;
+    }
 
     
     //Game Over Screen
@@ -181,6 +248,8 @@ void GameManager::gameTick()
 
    
 }
+
+
 
 //Adding brick into vector
 void GameManager::addEntity(Entity* e)
@@ -284,6 +353,7 @@ void GameManager::BrickDamage() {
 
     //Collision Damage
     bool collidedThisTick = false;
+
     for (Entity* e : entities)
     {
 
@@ -309,8 +379,8 @@ void GameManager::BrickDamage() {
             e->update();
         }
     }
-
 }
+
 //Optimization 3 Chose to clean up the Game Tick even further and is running much smoother after removing power ups and brick damage
 void GameManager::PowerUp() {
 
@@ -386,78 +456,28 @@ void GameManager::PowerUp() {
     }
 }
 
-//Keyboard Presses and SDL window states (Further optimization)
-void GameManager::KeyboardState() {
-    bool repeatKey = SDL_PollEvent(&event) == 1;
+//AI movement
 
-    switch (event.type)
-    {
-        // if user clicks the red X
-    case SDL_QUIT:
-        _quit = true;
-        break;
 
-        //Paddle Movement
-    case SDL_KEYDOWN:
-        switch (event.key.keysym.sym)
-        {
-        case SDLK_LEFT:
-            paddle->startMoving(MOVE_LEFT);
-            break;
-        case SDLK_RIGHT:
-            paddle->startMoving(MOVE_RIGHT);
-            break;
-        case SDLK_SPACE:
-            if (ball->isOnPaddle())
-                ball->detach();
-            isPressed = true;
-            break;
-        case SDLK_ESCAPE:
-            if (repeatKey)
-            {
-                setState(STATE_MENU);
-                return;
-            }
-        }
-        break;
+void GameManager::controlAI()
+{
 
-    case SDL_KEYUP:
-        switch (event.key.keysym.sym)
-        {
-        case SDLK_LEFT:
-            paddle->stopMoving(MOVE_LEFT);
-            break;
-        case SDLK_RIGHT:
-            paddle->stopMoving(MOVE_RIGHT);
-            break;
-        }
-        break;
+    if (ball->isOnPaddle()) {
+        ball->detach();
+        isPressed = true;
     }
-}
-
-void GameManager::LevelState() {
-
-    if (levelOver)
-    {
-        // totalBricksDestroyed += maxBricks;
-        currentLevel++;
-        initGame(false);
-        levelOver = false;
-        return;
-    }
-
-
-    if (bricksLeft == 0)
-    {
-        levelOver = true;
-        totalBricksDestroyed += maxBricks;
-    }
-
-    if (currentLevel > 3) {
-        currentState = STATE_WINNER;
-    }
-
     
+    if (ball->getX() < 400) {
+        paddle->startMoving(MOVE_LEFT);
+    }
+
+    if (ball->getX() > 400) {
+        paddle->startMoving(MOVE_RIGHT);
+    }
+   
+     
+       // paddle->startMoving(MOVE_RIGHT);
+       
 }
 
 //Calculating score
