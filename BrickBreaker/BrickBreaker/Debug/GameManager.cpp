@@ -146,7 +146,7 @@ void GameManager::runGame()
 
 void GameManager::gameTick()
 {
-
+    bool compControl = false;
     bool repeatKey = SDL_PollEvent(&event) == 1;
 
     switch (event.type)
@@ -172,9 +172,9 @@ void GameManager::gameTick()
                 ball->detach();
             isPressed = true;
             break;
-        /*case SDLK_a:
-            controlAI();
-            break;*/
+        case SDLK_a:
+            compControl = true;
+            break;
         case SDLK_ESCAPE:
             if (repeatKey)
             {
@@ -193,18 +193,25 @@ void GameManager::gameTick()
             case SDLK_RIGHT:
                 paddle->stopMoving(MOVE_RIGHT);
                 break;*/
-            /*case SDLK_a:
-                paddle->stopMoving(MOVE_LEFT);
-                paddle->stopMoving(MOVE_RIGHT);
-                break;*/
+            case SDLK_a:
+                compControl = false;
+                break;
         }
 
         break;
     }
-       
-    while (event.key.keysym.sym == SDLK_a) {
-        controlAI();
-   }
+
+   
+
+    if (compControl) {
+        if (ball->getX() > paddle->getX() + paddle->getWidth() / 2) {
+            paddle->startMoving(MOVE_RIGHT);
+        }
+        else {
+            paddle->startMoving(MOVE_LEFT);
+        }
+    }
+    
 
     BrickDamage();
     PowerUp();
