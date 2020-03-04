@@ -148,8 +148,6 @@ void GameManager::gameTick()
 {
 
     bool repeatKey = SDL_PollEvent(&event) == 1;
-
-    //
   
     switch (event.type)
     {
@@ -162,20 +160,21 @@ void GameManager::gameTick()
     case SDL_KEYDOWN:
         switch (event.key.keysym.sym)
         {
-        case SDLK_LEFT:
+       /* case SDLK_LEFT:
             paddle->startMoving(MOVE_LEFT);
             break;
         case SDLK_RIGHT:
             paddle->startMoving(MOVE_RIGHT);
             break;
+            */
         case SDLK_SPACE:
             if (ball->isOnPaddle())
                 ball->detach();
             isPressed = true;
             break;
-        case SDLK_a:
+        /*case SDLK_a:
             controlAI();
-            break;
+            break;*/
         case SDLK_ESCAPE:
             if (repeatKey)
             {
@@ -188,18 +187,24 @@ void GameManager::gameTick()
     case SDL_KEYUP:
         switch (event.key.keysym.sym)
         {
-        case SDLK_LEFT:
+        /*case SDLK_LEFT:
             paddle->stopMoving(MOVE_LEFT);
             break;
         case SDLK_RIGHT:
             paddle->stopMoving(MOVE_RIGHT);
             break;
+        case SDLK_a:
+            break;*/
         }
+    
         break;
     }
 
-   
     
+    controlAI();
+    
+    
+
     BrickDamage();
     PowerUp();
 
@@ -464,14 +469,23 @@ void GameManager::PowerUp() {
 void GameManager::controlAI()
 {
 
-    if (ball->isOnPaddle()) {
+
+   /* if (ball->isOnPaddle()) {
         ball->detach();
         isPressed = true;
-    }
+    }*/
     
-    
-   paddle->startMoving(ball->getX());
-    
+   // while () {
+
+        if (ball->getX() > paddle->getX()) {
+            paddle->startMoving(MOVE_RIGHT);
+        }
+        else {
+            paddle->startMoving(MOVE_LEFT);
+        }
+
+   // }
+   
    
    // paddle->startMoving(MOVE_RIGHT);
        
