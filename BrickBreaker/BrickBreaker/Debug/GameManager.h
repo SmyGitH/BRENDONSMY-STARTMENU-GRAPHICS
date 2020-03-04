@@ -32,6 +32,9 @@ class GameManager
         //Brick collision Damage
         void BrickDamage();
 
+        // AI functions
+        void controlAI();
+
         //Power UP Function
         void PowerUp();
 		
@@ -109,8 +112,7 @@ class GameManager
         // this is where most of the game happens
         void gameTick();
 
-        // AI functions
-        void controlAI();
+        
 
         bool _quit;
 

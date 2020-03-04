@@ -1,5 +1,5 @@
 ﻿  GameManager.cpp
 C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\GameManager.cpp(17,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\GameManager.cpp(139,33): warning C4018: '<': signed/unsigned mismatch
-C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\GameManager.cpp(198,9): warning C4060: switch statement contains no 'case' or 'default' labels
+C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\GameManager.cpp(200,9): warning C4060: switch statement contains no 'case' or 'default' labels
   BrickBreaker.vcxproj -> C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\BrickBreaker.exe

@@ -148,7 +148,7 @@ void GameManager::gameTick()
 {
 
     bool repeatKey = SDL_PollEvent(&event) == 1;
-  
+
     switch (event.type)
     {
         // if user clicks the red X
@@ -160,13 +160,13 @@ void GameManager::gameTick()
     case SDL_KEYDOWN:
         switch (event.key.keysym.sym)
         {
-       /* case SDLK_LEFT:
-            paddle->startMoving(MOVE_LEFT);
-            break;
-        case SDLK_RIGHT:
-            paddle->startMoving(MOVE_RIGHT);
-            break;
-            */
+            /* case SDLK_LEFT:
+                 paddle->startMoving(MOVE_LEFT);
+                 break;
+             case SDLK_RIGHT:
+                 paddle->startMoving(MOVE_RIGHT);
+                 break;
+                 */
         case SDLK_SPACE:
             if (ball->isOnPaddle())
                 ball->detach();
@@ -187,23 +187,24 @@ void GameManager::gameTick()
     case SDL_KEYUP:
         switch (event.key.keysym.sym)
         {
-        /*case SDLK_LEFT:
-            paddle->stopMoving(MOVE_LEFT);
-            break;
-        case SDLK_RIGHT:
-            paddle->stopMoving(MOVE_RIGHT);
-            break;
-        case SDLK_a:
-            break;*/
+            /*case SDLK_LEFT:
+                paddle->stopMoving(MOVE_LEFT);
+                break;
+            case SDLK_RIGHT:
+                paddle->stopMoving(MOVE_RIGHT);
+                break;*/
+            /*case SDLK_a:
+                paddle->stopMoving(MOVE_LEFT);
+                paddle->stopMoving(MOVE_RIGHT);
+                break;*/
         }
-    
+
         break;
     }
-
-    
-    controlAI();
-    
-    
+       
+    while (event.key.keysym.sym == SDLK_a) {
+        controlAI();
+   }
 
     BrickDamage();
     PowerUp();
@@ -468,7 +469,8 @@ void GameManager::PowerUp() {
 
 void GameManager::controlAI()
 {
-
+    bool compLeft = false;
+    bool compRight = false;
 
    /* if (ball->isOnPaddle()) {
         ball->detach();
@@ -476,13 +478,22 @@ void GameManager::controlAI()
     }*/
     
    // while () {
+   // while (ball->getLives > 0) {
 
-        if (ball->getX() > paddle->getX()) {
+   // while (!compLeft || !compRight) {
+
+        if (ball->getX() > paddle->getX() + paddle->getWidth() / 2) {
             paddle->startMoving(MOVE_RIGHT);
+            compRight = true;
         }
         else {
             paddle->startMoving(MOVE_LEFT);
+            compLeft = true;
         }
+    //}
+    
+   // }
+        
 
    // }
    
