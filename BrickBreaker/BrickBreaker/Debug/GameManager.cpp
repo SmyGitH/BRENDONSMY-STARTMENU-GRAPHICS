@@ -160,13 +160,13 @@ void GameManager::gameTick()
     case SDL_KEYDOWN:
         switch (event.key.keysym.sym)
         {
-            /* case SDLK_LEFT:
+             case SDLK_LEFT:
                  paddle->startMoving(MOVE_LEFT);
                  break;
              case SDLK_RIGHT:
                  paddle->startMoving(MOVE_RIGHT);
                  break;
-                 */
+                 
         case SDLK_SPACE:
             if (ball->isOnPaddle())
                 ball->detach();
@@ -187,12 +187,12 @@ void GameManager::gameTick()
     case SDL_KEYUP:
         switch (event.key.keysym.sym)
         {
-            /*case SDLK_LEFT:
+            case SDLK_LEFT:
                 paddle->stopMoving(MOVE_LEFT);
                 break;
             case SDLK_RIGHT:
                 paddle->stopMoving(MOVE_RIGHT);
-                break;*/
+                break;
             case SDLK_a:
                 compControl = false;
                 break;
@@ -201,15 +201,8 @@ void GameManager::gameTick()
         break;
     }
 
-   
-
     if (compControl) {
-        if (ball->getX() > paddle->getX() + paddle->getWidth() / 2) {
-            paddle->startMoving(MOVE_RIGHT);
-        }
-        else {
-            paddle->startMoving(MOVE_LEFT);
-        }
+        controlAI();
     }
     
 
@@ -476,37 +469,29 @@ void GameManager::PowerUp() {
 
 void GameManager::controlAI()
 {
-    bool compLeft = false;
-    bool compRight = false;
-
-   /* if (ball->isOnPaddle()) {
+    if (ball->isOnPaddle()) {
         ball->detach();
         isPressed = true;
-    }*/
-    
-   // while () {
-   // while (ball->getLives > 0) {
-
-   // while (!compLeft || !compRight) {
-
-        if (ball->getX() > paddle->getX() + paddle->getWidth() / 2) {
-            paddle->startMoving(MOVE_RIGHT);
-            compRight = true;
-        }
-        else {
-            paddle->startMoving(MOVE_LEFT);
-            compLeft = true;
-        }
-    //}
-    
-   // }
-        
-
-   // }
-   
-   
-   // paddle->startMoving(MOVE_RIGHT);
+    }
        
+
+    if (ball->getX() > paddle->getX() + paddle->getWidth()) {
+        paddle->stopMoving(MOVE_LEFT);
+        paddle->startMoving(MOVE_RIGHT);
+    }
+    if (ball->getX() < paddle->getX()) {
+        paddle->stopMoving(MOVE_RIGHT);
+        paddle->startMoving(MOVE_LEFT);
+    }
+
+    if (ball->getX() >= paddle->getX() + paddle->getWidth() / 2) {
+        paddle->stopMoving(MOVE_LEFT);
+        paddle->startMoving(MOVE_RIGHT);
+    }
+    else {
+        paddle->stopMoving(MOVE_RIGHT);
+        paddle->startMoving(MOVE_LEFT);
+    }
 }
 
 //Calculating score
