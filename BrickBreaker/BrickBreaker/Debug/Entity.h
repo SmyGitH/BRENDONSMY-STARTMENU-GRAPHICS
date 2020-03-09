@@ -58,9 +58,6 @@ class Entity
         // stops entity's movement in 'direction'
         // see EntityMoveState for options
         void stopMoving(int direction);
-
-        //computer movement function follows ball
-        void compMoving(int entity);
         
         // update the entity's position and draw it to the window
         virtual void update();

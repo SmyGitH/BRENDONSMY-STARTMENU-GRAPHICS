@@ -204,11 +204,9 @@ void GameManager::gameTick()
     if (compControl) {
         controlAI();
     }
-    
 
     BrickDamage();
     PowerUp();
-
 
     if (levelOver)
     {
@@ -218,7 +216,6 @@ void GameManager::gameTick()
         levelOver = false;
         return;
     }
-
 
     if (bricksLeft == 0)
     {
@@ -230,7 +227,6 @@ void GameManager::gameTick()
         currentState = STATE_WINNER;
     }
 
-    
     //Game Over Screen
     if (ball->getLives() < 1)
     {
@@ -240,9 +236,6 @@ void GameManager::gameTick()
         listenForQuit();
         return;
     }
-
-
-   
 
     if (ball->collidedWith(paddle))
     {
@@ -317,7 +310,7 @@ void GameManager::buildMap()
     //setting up level 1
     if (currentLevel == 1) {
         health = 1;
-
+        
         for (int i = 0; i < 7; i++) {
             addEntity(new Brick(getWindow(), "greenBrick.png", xpos, ypos, health));
             xpos += 90;
@@ -465,15 +458,12 @@ void GameManager::PowerUp() {
 }
 
 //AI movement
-
-
 void GameManager::controlAI()
 {
     if (ball->isOnPaddle()) {
         ball->detach();
         isPressed = true;
     }
-       
 
     if (ball->getX() > paddle->getX() + paddle->getWidth()) {
         paddle->stopMoving(MOVE_LEFT);
@@ -484,14 +474,11 @@ void GameManager::controlAI()
         paddle->startMoving(MOVE_LEFT);
     }
 
-    if (ball->getX() >= paddle->getX() + paddle->getWidth() / 2) {
+    if (ball->getX() == paddle->getX() + paddle->getWidth() / 2) {
         paddle->stopMoving(MOVE_LEFT);
         paddle->startMoving(MOVE_RIGHT);
     }
-    else {
-        paddle->stopMoving(MOVE_RIGHT);
-        paddle->startMoving(MOVE_LEFT);
-    }
+    
 }
 
 //Calculating score
