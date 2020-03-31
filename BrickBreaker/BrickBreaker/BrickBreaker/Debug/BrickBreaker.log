@@ -1,18 +1,2 @@
-﻿  Ball.cpp
-C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\Ball.cpp(131,31): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\Ball.cpp(132,17): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  Brick.cpp
-  Entity.cpp
-  GameManager.cpp
-C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\GameManager.cpp(17,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\GameManager.cpp(139,33): warning C4018: '<': signed/unsigned mismatch
-  Log.cpp
-  main.cpp
-  Menu.cpp
-C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\Menu.cpp(51,33): warning C4018: '>': signed/unsigned mismatch
-C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\Menu.cpp(60,23): warning C4018: '<': signed/unsigned mismatch
-  Mods.cpp
-  Timer.cpp
-  Window.cpp
-  Generating Code...
+﻿  LINK : C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\BrickBreaker.exe not found or not built by the last incremental link; performing full link
   BrickBreaker.vcxproj -> C:\Users\smybr\Documents\School projects\Game Development\BRENDONSMY-STARTMENU-GRAPHICS\BrickBreaker\BrickBreaker\Debug\BrickBreaker.exe

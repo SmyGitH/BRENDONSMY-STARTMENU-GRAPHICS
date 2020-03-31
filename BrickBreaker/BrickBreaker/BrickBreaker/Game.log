@@ -15,22 +15,23 @@ Info:  Loaded level 1 with 7 blocks.
 Info:  Detached ball from paddle.
 Info:  Ball hit something!
 Info:  6 / 7 bricks remaining
-Info:  Make the paddle slower!
-Info:  Ball hit something!
+Info:  Changed texture of entity from paddle.png to paddle_big.png
+Info:  Spawn bigger paddle
+Info:  Lives left: 2
+Info:  Placed ball on paddle.
+Info:  Detached ball from paddle.
 Info:  Ball hit something!
 Info:  5 / 7 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
-Info:  Ball hit something!
 Info:  4 / 7 bricks remaining
+Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  3 / 7 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  2 / 7 bricks remaining
-Info:  Lives left: 2
-Info:  Placed ball on paddle.
-Info:  Detached ball from paddle.
+Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  1 / 7 bricks remaining
 Info:  Ball hit something!
@@ -60,8 +61,7 @@ Info:  Detached ball from paddle.
 Info:  Ball hit something!
 Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
 Info:  14 / 14 bricks remaining
-Info:  Changed texture of entity from paddle.png to paddle_big.png
-Info:  Spawn bigger paddle
+Info:  Make the paddle slower!
 Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
@@ -78,31 +78,24 @@ Info:  Ball hit something!
 Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
 Info:  13 / 14 bricks remaining
 Info:  Ball hit something!
-Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
-Info:  13 / 14 bricks remaining
 Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
-Info:  13 / 14 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  12 / 14 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
 Info:  12 / 14 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  11 / 14 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
+Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
+Info:  11 / 14 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
 Info:  10 / 14 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  9 / 14 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
-Info:  10 / 14 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
 Info:  9 / 14 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
@@ -121,11 +114,21 @@ Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
 Info:  8 / 14 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
-Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
-Info:  8 / 14 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
 Info:  7 / 14 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
+Info:  7 / 14 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
+Info:  7 / 14 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
+Info:  7 / 14 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  6 / 14 bricks remaining
@@ -134,25 +137,33 @@ Info:  Ball hit something!
 Info:  5 / 14 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
-Info:  Ball hit something!
 Info:  4 / 14 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  3 / 14 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  2 / 14 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
 Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
-Info:  3 / 14 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
 Info:  2 / 14 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  1 / 14 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
 Info:  Changed texture of entity from yellowBrick.png to greenBrick.png
 Info:  1 / 14 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  Ball hit something!
@@ -188,7 +199,23 @@ Info:  Detached ball from paddle.
 Info:  Ball hit something!
 Info:  Changed texture of entity from redBrick.png to yellowBrick.png
 Info:  21 / 21 bricks remaining
-Info:  Make the paddle slower!
+Info:  Make the paddle faster!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  21 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  21 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  21 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  21 / 21 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  Changed texture of entity from redBrick.png to yellowBrick.png
@@ -210,9 +237,18 @@ Info:  Ball hit something!
 Info:  20 / 21 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
-Info:  19 / 21 bricks remaining
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  20 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  20 / 21 bricks remaining
+Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  20 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
 Info:  19 / 21 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
@@ -224,88 +260,196 @@ Info:  Changed texture of entity from redBrick.png to greenBrick.png
 Info:  19 / 21 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
-Info:  Changed texture of entity from redBrick.png to greenBrick.png
-Info:  19 / 21 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Changed texture of entity from redBrick.png to yellowBrick.png
-Info:  19 / 21 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Changed texture of entity from redBrick.png to greenBrick.png
-Info:  19 / 21 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Changed texture of entity from redBrick.png to greenBrick.png
-Info:  19 / 21 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Changed texture of entity from redBrick.png to yellowBrick.png
-Info:  19 / 21 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  18 / 21 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Changed texture of entity from redBrick.png to yellowBrick.png
 Info:  18 / 21 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  17 / 21 bricks remaining
 Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  17 / 21 bricks remaining
 Info:  Ball hit something!
 Info:  16 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  16 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  15 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  15 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  15 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  14 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  14 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  14 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  13 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  13 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  13 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  13 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  12 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  12 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  12 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  11 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  11 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  11 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  10 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  10 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  9 / 21 bricks remaining
 Info:  Lives left: 2
 Info:  Placed ball on paddle.
 Info:  Detached ball from paddle.
 Info:  Ball hit something!
-Info:  15 / 21 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Changed texture of entity from redBrick.png to greenBrick.png
-Info:  15 / 21 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  14 / 21 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
 Info:  Changed texture of entity from redBrick.png to yellowBrick.png
-Info:  14 / 21 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Changed texture of entity from redBrick.png to yellowBrick.png
-Info:  14 / 21 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Changed texture of entity from redBrick.png to yellowBrick.png
-Info:  14 / 21 bricks remaining
+Info:  9 / 21 bricks remaining
 Info:  Ball hit something!
 Info:  Ball hit something!
 Info:  Changed texture of entity from redBrick.png to greenBrick.png
-Info:  14 / 21 bricks remaining
+Info:  9 / 21 bricks remaining
 Info:  Ball hit something!
+Info:  8 / 21 bricks remaining
 Info:  Ball hit something!
-Info:  Changed texture of entity from redBrick.png to greenBrick.png
-Info:  14 / 21 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  13 / 21 bricks remaining
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Ball hit something!
-Info:  Changed texture of entity from redBrick.png to greenBrick.png
-Info:  13 / 21 bricks remaining
 Info:  Lives left: 1
 Info:  Placed ball on paddle.
 Info:  Detached ball from paddle.
-Info:  Lives left: 0
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  8 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  7 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  7 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  7 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  6 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  6 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  5 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  4 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  4 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  4 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  4 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  4 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  3 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  3 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  3 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  2 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  1 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to yellowBrick.png
+Info:  1 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Changed texture of entity from redBrick.png to greenBrick.png
+Info:  1 / 21 bricks remaining
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  Ball hit something!
+Info:  0 / 21 bricks remaining
+Info:  Created new entity with texture paddle.png at (305, 305)
+Info:  Changed texture of entity from paddle.png to paddle.png
+Info:  Created new entity with texture ball.png at (320, 320)
 Info:  Placed ball on paddle.
-Info:  Detached ball from paddle.
+Info:  Created new entity with texture PowerUP.png at (320, 320)
+Info:  Loaded level 4 with 0 blocks.
+Info:  Set state to 0
+Info:  Set state to 4
+Info:  Set state to 0
+Info:  Set state to 3
+Info:  Set state to 0
