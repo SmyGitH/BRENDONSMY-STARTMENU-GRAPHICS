@@ -6,6 +6,8 @@ public class PaddleController : MonoBehaviour
 {
     public Rigidbody2D rigidBody;
     public float speed;
+    public float maxX;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,10 @@ public class PaddleController : MonoBehaviour
       if (x == 0) {
         Stop();
       }
+
+      Vector3 pos = transform.position;
+      pos.x = Mathf.Clamp(pos.x,-maxX, maxX);
+      transform.position = pos;
     
     }
 
