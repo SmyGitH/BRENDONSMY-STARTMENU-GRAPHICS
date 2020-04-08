@@ -17,8 +17,12 @@ public class ModControl : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col){
-        if (col.gameObject.tag == "Paddle" || col.gameObject.tag == "Floor"){
-           Destroy(gameObject);
+        if (col.gameObject.tag == "Paddle"){
+            Debug.Log("PADDLE SPEED INCREASED");
+            Destroy(gameObject);
+        }
+        if(col.gameObject.tag == "Floor"){
+            Destroy(gameObject);
         }
     }
 }

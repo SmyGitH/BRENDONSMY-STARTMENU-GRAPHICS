@@ -52,4 +52,6 @@ public class PaddleController : MonoBehaviour
    public void powerUp(){
      Debug.Log("PADDLE SPEED INCREASED");
    }
+
+   
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BallControl : MonoBehaviour
 {
+    public UIManager uI;
     public Rigidbody2D rigidBody;
     public float ballForce;
     public bool onPaddle;
@@ -11,7 +12,7 @@ public class BallControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        uI = GameObject.FindWithTag("uI").GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -23,11 +24,12 @@ public class BallControl : MonoBehaviour
 
         if(Input.GetKeyUp(KeyCode.Space)){
             onPaddle = false;
-            rigidBody.AddForce(new Vector2(ballForce, ballForce));
+            rigidBody.velocity = new Vector2(ballForce, ballForce);
         }
     }
     void OnCollisionEnter2D(Collision2D col){
         if (col.gameObject.tag == "Floor"){
+            uI.calcLives();
             onPaddle = true;
         }
     }

@@ -982,7 +982,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lives: 0'
+  m_Text: 'Lives: 3'
 --- !u!222 &1509156934
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1021,6 +1021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1361318903}
+  liveText: {fileID: 1509156933}
 --- !u!4 &1550751785
 Transform:
   m_ObjectHideFlags: 0
@@ -1243,6 +1244,10 @@ PrefabInstance:
       propertyPath: paddle
       value: 
       objectReference: {fileID: 671775222}
+    - target: {fileID: 130611568, guid: 4d7e812d20a49dd41b8de71e8898c24c, type: 3}
+      propertyPath: ballForce
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7e812d20a49dd41b8de71e8898c24c, type: 3}
 --- !u!1001 &3458689440780326016
