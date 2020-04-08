@@ -48,4 +48,8 @@ public class PaddleController : MonoBehaviour
     void Stop(){
         rigidBody.velocity = Vector2.zero;
     }
+
+   public void powerUp(){
+     Debug.Log("PADDLE SPEED INCREASED");
+   }
 }
