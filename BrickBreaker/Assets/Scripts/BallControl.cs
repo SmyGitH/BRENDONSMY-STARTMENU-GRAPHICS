@@ -9,6 +9,7 @@ public class BallControl : MonoBehaviour
     public float ballForce;
     public bool onPaddle;
     public Transform paddle;
+    public GameObject mod;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class BallControl : MonoBehaviour
         }
 
         if(Input.GetKeyUp(KeyCode.Space)){
+            Instantiate(mod,new Vector3(5,5,0),transform.rotation);
             onPaddle = false;
             rigidBody.velocity = new Vector2(ballForce, ballForce);
         }
