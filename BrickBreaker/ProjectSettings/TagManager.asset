@@ -8,6 +8,9 @@ TagManager:
   - uI
   - Floor
   - Paddle
+  - RedBrick
+  - YellowBrick
+  - GreenBrick
   layers:
   - Default
   - TransparentFX

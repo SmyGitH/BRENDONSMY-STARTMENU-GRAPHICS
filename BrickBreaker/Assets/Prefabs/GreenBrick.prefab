@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1091691275}
   m_Layer: 0
   m_Name: GreenBrick
-  m_TagString: Untagged
+  m_TagString: GreenBrick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,3 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c2c0efdce220446bf81b8d35ad93f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redBrick: {fileID: 21300000, guid: 5ea6e72d364313442838c009c8597598, type: 3}
+  yellowBrick: {fileID: 21300000, guid: f3b8b0418e030ca42b0b7cd82579a436, type: 3}
+  greenBrick: {fileID: 21300000, guid: ba682b11f3755de419e7e3a551a28bcf, type: 3}
+  uI: {fileID: 0}
+  spr: {fileID: 6092606129380797536}
