@@ -24,21 +24,23 @@ public class BrickControl : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col){
        
-        if (col.gameObject.tag == "Ball" && spr.sprite == greenBrick){
+        if (col.gameObject.tag == "Ball" && gameObject.tag == "GreenBrick"){
             uI.calcScore();
             Destroy(gameObject);
             
         }
 
-        if (col.gameObject.tag == "Ball" && spr.sprite == yellowBrick){
+        if (col.gameObject.tag == "Ball" && gameObject.tag == "YellowBrick"){
             uI.calcScore();
             spr.sprite = greenBrick;
             
         }
 
-        if (col.gameObject.tag == "Ball" && spr.sprite == redBrick){
+        if (col.gameObject.tag == "Ball" && gameObject.tag == "RedBrick"){
             uI.calcScore();
+            gameObject.tag = "YellowBrick";
             spr.sprite = yellowBrick;
+           
             
         }
 

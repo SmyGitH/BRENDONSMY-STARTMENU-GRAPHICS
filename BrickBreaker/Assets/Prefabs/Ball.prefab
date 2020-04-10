@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 130611568}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +132,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c4cab6cd57e9b45b9c707b2b803de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uI: {fileID: 0}
   rigidBody: {fileID: 164764554417047633}
-  ballForce: 300
-  onPaddle: 1
-  paddle: {fileID: 0}
+  ballForce: 10
+  offPaddle: 0
+  activePower: 0
+  paddle: {fileID: 8120760672603730420, guid: 04f3f78a3c8b2c340968b5112ce7d177, type: 3}
+  mod: {fileID: 7286654695969700438, guid: e7bda9de76eb5cc4f9b6f776274814d1, type: 3}
