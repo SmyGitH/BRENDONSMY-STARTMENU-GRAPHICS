@@ -24,7 +24,13 @@ public class LevelGenerator : MonoBehaviour
          Instantiate(Ball,new Vector3(2.82f,-4.8f,0),transform.rotation);
         //Level Spawn
         if (level == 1){
-            Instantiate(RedBrick, new Vector3(-8,4,0),transform.rotation);
+           float xPos = 0f;
+            for (int i = 0; i < 7; i++){
+                Instantiate(GreenBrick, new Vector3(-8.15f + xPos,4,0),transform.rotation);
+                xPos += 2.7f;
+            }
+
+            
         }
          
 

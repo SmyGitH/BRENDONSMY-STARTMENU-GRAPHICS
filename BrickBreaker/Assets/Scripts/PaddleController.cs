@@ -18,6 +18,7 @@ public class PaddleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    
       float x = Input.GetAxis("Horizontal");
       if ( x < 0){
         MoveLeft();

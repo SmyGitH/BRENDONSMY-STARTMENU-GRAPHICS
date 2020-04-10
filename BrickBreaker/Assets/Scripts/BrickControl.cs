@@ -27,11 +27,13 @@ public class BrickControl : MonoBehaviour
         if (col.gameObject.tag == "Ball" && gameObject.tag == "GreenBrick"){
             uI.calcScore();
             Destroy(gameObject);
+           
             
         }
 
         if (col.gameObject.tag == "Ball" && gameObject.tag == "YellowBrick"){
             uI.calcScore();
+            gameObject.tag = "GreenBrick";
             spr.sprite = greenBrick;
             
         }
