@@ -30,8 +30,13 @@ public class BallControl : MonoBehaviour
             
             offPaddle = true;
             activePower = true;
-            Instantiate(mod,new Vector3(5,5,0),transform.rotation);
+           // Instantiate(mod,new Vector3(5,5,0),transform.rotation);
             rigidBody.velocity = new Vector2(ballForce, ballForce);
+        }
+
+        if(uI.lives == 0){
+            Application.Quit();
+            Debug.Log("YOU HAVE LOST");
         }
     }
     void OnCollisionEnter2D(Collision2D col){
