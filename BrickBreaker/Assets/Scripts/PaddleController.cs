@@ -7,17 +7,22 @@ public class PaddleController : MonoBehaviour
     public Rigidbody2D rigidBody;
     public float speed;
     public float maxX;
+    public UIManager uI;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        uI = GameObject.FindWithTag("uI").GetComponent<UIManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+      if(uI.gameOver){
+        Destroy(gameObject);
+        return;
+      }
     
       float x = Input.GetAxis("Horizontal");
       if ( x < 0){

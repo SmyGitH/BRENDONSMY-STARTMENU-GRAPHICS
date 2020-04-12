@@ -21,6 +21,11 @@ public class BallControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(uI.gameOver){
+            Destroy(gameObject);
+            return;
+        }
+
         if (!offPaddle){
 
             transform.position = paddle.position;
@@ -34,10 +39,7 @@ public class BallControl : MonoBehaviour
             rigidBody.velocity = new Vector2(ballForce, ballForce);
         }
 
-        if(uI.lives == 0){
-            Application.Quit();
-            Debug.Log("YOU HAVE LOST");
-        }
+       
     }
     void OnCollisionEnter2D(Collision2D col){
         if (col.gameObject.tag == "Floor"){
