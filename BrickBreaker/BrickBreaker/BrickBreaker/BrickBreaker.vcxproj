@@ -130,7 +130,6 @@
     <ClCompile Include="..\Debug\Brick.cpp" />
     <ClCompile Include="..\Debug\Entity.cpp" />
     <ClCompile Include="..\Debug\GameManager.cpp" />
-    <ClCompile Include="..\Debug\levelLoader.cpp" />
     <ClCompile Include="..\Debug\Log.cpp" />
     <ClCompile Include="..\Debug\main.cpp" />
     <ClCompile Include="..\Debug\Menu.cpp" />
@@ -143,7 +142,6 @@
     <ClInclude Include="..\Debug\Brick.h" />
     <ClInclude Include="..\Debug\Entity.h" />
     <ClInclude Include="..\Debug\GameManager.h" />
-    <ClInclude Include="..\Debug\levelLoader.h" />
     <ClInclude Include="..\Debug\Log.h" />
     <ClInclude Include="..\Debug\Menu.h" />
     <ClInclude Include="..\Debug\Mods.h" />

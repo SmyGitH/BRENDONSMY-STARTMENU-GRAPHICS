@@ -25,6 +25,18 @@ class GameManager
 
         // start running the game, Tick functions are run inside this method
         void runGame();
+
+        //place bricks on the screen
+        void buildMap();
+
+        //Brick collision Damage
+        void BrickDamage();
+
+        // AI functions
+        void controlAI();
+
+        //Power UP Function
+        void PowerUp();
 		
         void quit() { _quit = true; }
         void setState(int state);
@@ -56,7 +68,8 @@ class GameManager
 
         Ball* ball;
         Entity* paddle;
-		Brick* brick;
+        Brick* brick;
+	
 		
         Mods* mod;
 
@@ -98,6 +111,8 @@ class GameManager
 
         // this is where most of the game happens
         void gameTick();
+
+        
 
         bool _quit;
 
