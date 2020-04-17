@@ -823,4 +823,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/PlayGame.unity
-  playerPath: /Users/brendonsmy/Documents/GitHub/BRENDONSMY-STARTMENU-GRAPHICS/BrickBreaker/XcodeBuilds/IOS2
+  playerPath: /Users/brendonsmy/Documents/GitHub/BRENDONSMY-STARTMENU-GRAPHICS/BrickBreaker/XcodeBuilds/IOS3

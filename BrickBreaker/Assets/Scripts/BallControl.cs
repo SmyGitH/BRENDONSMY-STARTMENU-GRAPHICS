@@ -31,7 +31,7 @@ public class BallControl : MonoBehaviour
             transform.position = paddle.position;
         }
 
-        if(Input.GetKeyUp(KeyCode.Space)){
+        if(Input.GetMouseButtonDown(0)){
             
             offPaddle = true;
             activePower = true;
