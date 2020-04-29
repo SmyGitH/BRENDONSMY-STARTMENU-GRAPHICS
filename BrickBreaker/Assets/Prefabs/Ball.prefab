@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uI: {fileID: 0}
   rigidBody: {fileID: 164764554417047633}
-  ballForce: 8
+  ballForce: 6
   offPaddle: 0
   activePower: 0
   paddle: {fileID: 8120760672603730420, guid: 04f3f78a3c8b2c340968b5112ce7d177, type: 3}

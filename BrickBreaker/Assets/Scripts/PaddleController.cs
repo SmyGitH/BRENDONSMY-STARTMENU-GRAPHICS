@@ -24,7 +24,7 @@ public class PaddleController : MonoBehaviour
         return;
       }
     
-      float x = Input.GetAxis("Horizontal");
+      /*float x = Input.GetAxis("Horizontal");
       if ( x < 0){
         MoveLeft();
       }
@@ -35,20 +35,29 @@ public class PaddleController : MonoBehaviour
 
       if (x == 0) {
         Stop();
-      }
+      }*/
 
       Vector3 pos = transform.position;
       pos.x = Mathf.Clamp(pos.x,-maxX, maxX);
       transform.position = pos;
+
+       
     
     }
 
-    void MoveLeft(){
-         rigidBody.velocity = new Vector2 (-speed, 0);
+    void FixedUpdate(){
+        float tilt = Input.acceleration.x;
+        transform.Translate( tilt * speed * Time.deltaTime, 0, 0);
     }
 
-    void MoveRight(){
+    public void MoveLeft(){
+         rigidBody.velocity = new Vector2 (-speed, 0);
+         Debug.Log("LEFT");
+    }
+
+    public void MoveRight(){
         rigidBody.velocity = new Vector2 (speed, 0);
+        Debug.Log("right");
     }
 
     void Stop(){

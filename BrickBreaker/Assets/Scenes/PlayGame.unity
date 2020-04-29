@@ -1599,6 +1599,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4188038997616495412, guid: 0ec4a1a5bea2e174e8dee542bb9d46ec,
+        type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1361318903}
+    - target: {fileID: 4188038997616495412, guid: 0ec4a1a5bea2e174e8dee542bb9d46ec,
+        type: 3}
+      propertyPath: liveText
+      value: 
+      objectReference: {fileID: 1509156933}
+    - target: {fileID: 4188038997616495412, guid: 0ec4a1a5bea2e174e8dee542bb9d46ec,
+        type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 1331225830}
     - target: {fileID: 4188038997616495413, guid: 0ec4a1a5bea2e174e8dee542bb9d46ec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1654,20 +1669,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4188038997616495412, guid: 0ec4a1a5bea2e174e8dee542bb9d46ec,
-        type: 3}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 1361318903}
-    - target: {fileID: 4188038997616495412, guid: 0ec4a1a5bea2e174e8dee542bb9d46ec,
-        type: 3}
-      propertyPath: liveText
-      value: 
-      objectReference: {fileID: 1509156933}
-    - target: {fileID: 4188038997616495412, guid: 0ec4a1a5bea2e174e8dee542bb9d46ec,
-        type: 3}
-      propertyPath: gameOverPanel
-      value: 
-      objectReference: {fileID: 1331225830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ec4a1a5bea2e174e8dee542bb9d46ec, type: 3}

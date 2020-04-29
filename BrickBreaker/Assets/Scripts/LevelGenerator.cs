@@ -19,7 +19,7 @@ public class LevelGenerator : MonoBehaviour
 
     public void BuildLevel(){
         //Paddle Spawn
-         Instantiate(Paddle,new Vector3(2.82f,-5.5f,0),transform.rotation);
+        Instantiate(Paddle,new Vector3(2.82f,-5.5f,0),transform.rotation);
         //Ball Spawn
          Instantiate(Ball,new Vector3(2.82f,-4.8f,0),transform.rotation);
         //Level Spawn
