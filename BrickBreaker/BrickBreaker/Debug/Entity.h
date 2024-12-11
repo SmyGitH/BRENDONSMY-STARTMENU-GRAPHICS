@@ -11,7 +11,7 @@ enum EntityMoveState
     MOVE_DOWN =  0x02,
     MOVE_LEFT =  0x04,
     MOVE_RIGHT = 0x08,
-    MOVE_ALL =   0x10
+    MOVE_ALL =   0x10,
 };
 
 enum TypeIDs
@@ -28,6 +28,7 @@ class Entity
         Entity(Window* window, const std::string& textureName, int xPos, int yPos);
         ~Entity();
 
+       
         SDL_Texture* getTexture() { return texture; }
         int getX() { return xPos; }
         int getY() { return yPos; }

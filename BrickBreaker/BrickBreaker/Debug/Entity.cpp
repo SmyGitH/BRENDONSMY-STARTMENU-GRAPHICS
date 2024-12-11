@@ -130,6 +130,8 @@ void Entity::stopMoving(int direction)
     moveState &= ~direction;
 }
 
+
+
 bool Entity::isMoving(int direction)
 {
     return (moveState & direction) != 0;
